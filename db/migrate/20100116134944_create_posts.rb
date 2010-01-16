@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration
   def self.up
     create_table :posts do |t|
       t.integer :site_id
-      t.integer :member_id
+      t.integer :user_id
       t.string :title
       t.string :description
       t.integer :likes

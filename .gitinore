@@ -1,0 +1,9 @@
+.DS_Store
+tmp
+log
+public/a
+vendor/rails
+db/sphinx
+config/*.sphinx.conf
+db/schema.rb
+vendor/rails
