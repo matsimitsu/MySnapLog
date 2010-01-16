@@ -7,3 +7,4 @@ db/sphinx
 config/*.sphinx.conf
 db/schema.rb
 vendor/rails
+public/system
