@@ -1,0 +1,12 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: mysnaplog_dev
+  username: root
+  password: 
+test:
+  adapter: mysql
+  encoding: utf8
+  database: mysnaplog_test
+  username: root
+  password:
