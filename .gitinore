@@ -2,9 +2,9 @@
 tmp
 log
 public/a
+public/system
 vendor/rails
 db/sphinx
 config/*.sphinx.conf
 db/schema.rb
 vendor/rails
-public/system

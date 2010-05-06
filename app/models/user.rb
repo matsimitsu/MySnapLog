@@ -1,12 +1,6 @@
-class User < ActiveRecord::Base
-  acts_as_authentic
-  has_many :memberships
-  has_many :sites, :through => :memberships
+class User
+  include MongoMapper::Document
+  many :albums
+  devise :registerable, :authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :avatar,
-                      :styles => {
-                        :thumb => "75x75>",
-                        :small => "150x150>"
-                      }
-  
 end

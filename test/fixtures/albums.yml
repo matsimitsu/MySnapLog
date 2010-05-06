@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  slug: MyString
+  public: false
+  photos_count: 1
+
+two:
+  name: MyString
+  slug: MyString
+  public: false
+  photos_count: 1

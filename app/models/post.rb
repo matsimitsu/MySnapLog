@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  belongs_to :site
+  belongs_to :album
   belongs_to :user
   has_many :comments, :dependent => :destroy
   
@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
                         :small_thumb  => "75x75>",
                         :thumb        => "100x100>",
                         :small        => "240x240>",
-                        :medium       => "500x500>",
+                        :medium       => "595x500>",
                         :large        => "1024x1024>"
                       }
 end

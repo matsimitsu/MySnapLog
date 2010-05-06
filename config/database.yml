@@ -1,12 +1,16 @@
+# config/database.yml
+
 development:
-  adapter: mysql
-  encoding: utf8
-  database: mysnaplog_dev
-  username: root
-  password: 
+  adapter: mongodb
+  database: mysnaplog_development
+  host: localhost
+
 test:
-  adapter: mysql
-  encoding: utf8
+  adapter: mongodb
   database: mysnaplog_test
-  username: root
-  password:
+  host: localhost
+
+production:
+  adapter: mongodb
+  database: mysnaplog_production
+  host: localhost
