@@ -14,6 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml'
   config.gem 'machinist'
   config.gem 'faker'
+  config.gem 'stringex'
   config.time_zone = 'UTC'
   config.frameworks -= [ :active_record ]
 end
