@@ -1,5 +1,12 @@
-<ul id="albums">
+<table id="albums">
+	<tr>
+		<th>Name</th>
+		<th>Photos</th>
+		<th>Comments</th>
+		<th>Created</th>
+		<th>Actions</th>
+	</tr>
 	<% @albums.each do |album| %>
 		<%= render 'album', :album => album %>
 	<% end %>
-</ul>
+</table>

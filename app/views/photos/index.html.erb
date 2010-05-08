@@ -1,0 +1,6 @@
+<section id="photos">
+	<% @photos.each do |photo| %>
+		<%= render 'photo', :photo => photo, :size => :large, :link => [photo.album.user, photo.album, photo] %>
+	<% end %>
+</section>
+<%= will_paginate @photos %>

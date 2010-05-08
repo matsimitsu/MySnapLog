@@ -1,20 +1,30 @@
 class Manage::AlbumsController < ApplicationController
   
   before_filter :authenticate_user!
-  
+  before_filter :load_album, :only => [:edit, :update, :ubb]
   def index
     @albums = current_user.albums
   end
   
-  def upload_image_block
-    @post = @current_site.posts.new(:user_id => @current_user, :image => swf_upload_data) # here you can use your favourite plugin to work with attachments
-    @post.title = @post.image_file_name
-    @post.save
-    # use RJS here
-    render :update do |page|
-      page['blocks'].insert("<li>#{image_tag @post.image(:thumb) }")
+  def edit
+  end
+  
+  def ubb
+    @photos = @album.photos
+  end
+  
+  def update
+    if @album.update_attributes(params[:album])
+      flash[:notice] = "Album updated!"
+      redirect_to manage_albums_path
+    else
+      render :action => :edit
     end
   end
   
-
+  private
+  
+  def load_album
+    @album = current_user.albums.find_by_slug(params[:id])
+  end
 end

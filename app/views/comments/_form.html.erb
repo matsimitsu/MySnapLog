@@ -1,0 +1,15 @@
+<% remote_form_for [photo.album.user, photo.album, photo, Comment.new], :html => { :id => 'comment_form' } do |form| %>
+	<%= form.label :name %><br />
+	<%= form.text_field :name %><br />
+	<br />
+	<%= form.label :email %><br />
+	<%= form.text_field :email %><br />
+	<br />
+	<%= form.label :site %><br />
+	<%= form.text_field :site %><br />
+	<br />
+	<%= form.label :body %><br />
+	<%= form.text_area :body %><br />
+	
+	<%= form.submit ('post comment')%>
+<% end %>

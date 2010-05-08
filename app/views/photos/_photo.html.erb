@@ -1,0 +1,27 @@
+<figure class ="photo photo_<%= size %>" id="<% dom_id(photo) %>">
+	<%= defined?(link) ? link_to(image_tag(photo.image_url(size)), link) : image_tag(photo.image_url(size)) %>
+	<figcaption>
+		<ul>
+			<li class="views"><span><%= photo.view_count_for_version(size) %></span></li>
+			<li class="comments"><span><%= photo.comments.count %></span></li>
+			<%= render 'photos/like', :photo => photo %>
+			<% if photo.tags.any? %>
+				<li class="tags">
+					<span><%= photo.tags.join(', ')%></span>
+				</li>
+			<% end %>
+		</ul>
+		<span></span>
+	</figcaption>
+</figure>
+
+<% if defined?(show_comments) && show_comments == true %>
+<section class="comments">
+	<div id="comments">
+		<% photo.comments.each do |comment| -%>
+			<%= render 'comments/comment', :comment => comment %>
+		<% end -%>
+	</div>
+	<%= render 'comments/form', :photo => photo %>
+</section>	
+<% end %>

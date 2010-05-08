@@ -1,5 +1,13 @@
-<li><%= image_tag photo.image_url(:thumb)%></li>
-<li><%= image_tag photo.image_url(:small)%></li>
-<li><%= image_tag photo.image_url(:medium)%></li>
-<li><%= image_tag photo.image_url(:large)%></li>
-<li><%= image_tag photo.image_url(:huge)%></li>
+<figure class ="photo photo_large_thumbnail" id="<% dom_id(photo) %>">
+	<%= link_to(image_tag(photo.image_url(:large_thumb)), [photo.album.user, photo.album, photo]) %>
+	<figcaption>
+		<ul>
+			<li class="views"><span><%= photo.view_count_for_version(:thumb) %></span></li>
+			<li class="comments"><span><%= photo.comments.count %></span></li>
+			<li class="likes active" id="like">
+				<span><%= photo.likes %></span>
+			</li>
+		</ul>
+		<span></span>
+	</figcaption>
+</figure>

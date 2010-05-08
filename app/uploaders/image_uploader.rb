@@ -1,5 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
+  include CarrierWave::ImageScience
     
   storage :grid_fs
   
@@ -10,8 +10,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
-  version :thumb do
-    process :resize_to_fill => [100,100]
+  
+  version :large_thumb do
+    process :resize_to_fill => [180,180]
   end
   
   version :small do
@@ -19,11 +20,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
   
   version :medium do
-    process :resize_to_fit => [595,400]
+    process :resize_to_fit => [595,595]
   end
   
   version :large do
-    process :resize_to_fit => [900,650]
+    process :resize_to_fit => [900,900]
   end
   
   version :huge do

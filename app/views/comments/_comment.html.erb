@@ -1,0 +1,12 @@
+<article id="<%= dom_id(comment)%>">
+	<header>
+		Comment by: <%= link_to h(comment.name), comment.site %> <time datetime="<%= comment.created_at.iso8601 %>"> <%= time_ago_in_words comment.created_at %> ago</time>
+	</header>
+	<div class="avatar_thumbnail">
+		<%= gravatar(comment.email) %>
+	</div>
+	<div class="body">
+		<%= simple_format(comment.body) %>
+	</div>
+	<hr />
+</article>

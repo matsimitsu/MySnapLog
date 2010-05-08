@@ -1,18 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'style' %>
-  <%= javascript_include_tag :defaults, :swf_upload %>
-</head>
-<body>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield  %>
-
-</body>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	  <title>MySnapLog <%= " - #{@user.username}" if @user %></title>
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	  <%= stylesheet_link_tag 'style' %>
+	  <%= javascript_include_tag :defaults, :swf_upload %>
+		<!--[if lte IE 9]>
+			<%= javascript_include_tag 'html5' %>
+		<![endif]-->
+	</head>
+	<body class="<%= controller_name %> <%= action_name %>">
+		<div id="outer">
+			<div id="wrapper">
+				<header id="header">
+					<h1><%= @user ? link_to("MySnapLog - #{content_tag('span', @user.username, :class => 'user')}", user_path(@user)): link_to('MySnapLog', root_path) %></h1>
+					<nav>
+						<ul id="menu">
+						</ul>
+					</nav>
+				</header>
+				<div id="main">
+					<% if flash[:notice] -%>
+						<div class="flash_notice"><%= flash[:notice] %></div>
+					<% end -%>
+					
+					<%= yield  %>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

@@ -15,6 +15,9 @@ Rails::Initializer.run do |config|
   config.gem 'machinist'
   config.gem 'faker'
   config.gem 'stringex'
+  config.gem 'matsimitsu-risosu-san', :lib => 'risosu_san', :version => '~> 0.1.2', :source => 'http://gemcutter.org'
+  config.gem 'mongomapper_ext'
+  config.gem 'will_paginate'
   config.time_zone = 'UTC'
   config.frameworks -= [ :active_record ]
 end

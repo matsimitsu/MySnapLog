@@ -1,3 +1,32 @@
+body 
+  text-align: center
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #333
+  font-size: 62.5%
+  background: #fff
+
+a:link, a:visited
+  color: #4083a9
+  outline: none
+  text-decoration: none
+
+a:hover
+  text-decoration: none
+  color: #205f82
+
+
+a img
+  border: 0
+
+div#wrapper
+  margin: auto
+  width: 960px
+  text-align: left
+  font-size: 1.2em
+	
+section
+  display: block
+  
 ul.uploadContainer
   padding: 10px
   
@@ -17,3 +46,92 @@ ul.uploadContainer
       top: 17px
       height: 4px
       background: #63b534
+
+
+
+body.photos div#main
+  text-align: center
+  
+  
+  .photo
+    padding: 4px
+    display: block
+    -webkit-box-shadow: 3px 3px 10px #444
+    -moz-box-shadow: 3px 3px 10px #444
+    box-shadow: 3px 3px 10px #444
+    
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0 30px 0 30px
+      height: 20px
+      font-size: 1.2em
+      padding-top: 2px
+    
+      li
+        height: 20px
+        float: right
+        span, a
+          padding-left: 22px
+          padding-right: 10px
+  
+        &.views span
+          background: transparent url('/images/icons/monitor.png') no-repeat
+    
+        &.comments span
+          background: transparent url('/images/icons/dialog.png') no-repeat
+    
+        &.likes a
+          background: transparent url('/images/icons/love.png') no-repeat
+          text-decoration: none
+          color: inherit
+    
+        &.likes span
+          background: transparent url('/images/icons/love_active.png') no-repeat
+
+        &.tags span
+          background: transparent url('/images/icons/tags.png') no-repeat
+  
+  .photo_large_thumbnail
+    width: 180px
+    float: left
+    margin: 10px
+    
+  .photo_large
+    width: 900px
+    margin:  20px auto 50px auto
+
+  section.comments
+    text-align: left
+    margin-left: 40px
+    margin-right: 40px
+    
+    article
+      display: block
+      margin-bottom: 20px
+      
+      header
+        font-weight: bold
+        
+      div.avatar_thumbnail
+        float: left
+        margin-right: 10px
+        
+      div.body
+        margin-left: 100px
+      hr
+        clear: left
+        border: none
+        border-top: dashed 1px #CCCCCC
+        color: #FFFFFF
+        background-color: #FFFFFF
+        height: 1px
+        
+    form
+      margin-top: 50px
+      textarea
+        width: 100%
+        height: 150px
+        
+section#uploader
+  text-align: left

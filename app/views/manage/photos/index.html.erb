@@ -1,9 +1,10 @@
-<%= swf_upload_area 'Add Flyers', :url => manage_album_photos_path(@album),
+<section id="uploader">
+<%= swf_upload_area 'Add Photos', :url => manage_album_photos_path(@album),
  				:filetypes => "*.jpg; *.gif; *.png",
         :button_class => "generic_button",
 				:file_size_limit => "10 MB",
 				:single_file => false %>
-
+</section>
 <ul id="photos">
 	<% @photos.each do |photo| %>
 		<%= render 'photo', :photo => photo %>

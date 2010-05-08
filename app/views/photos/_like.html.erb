@@ -1,0 +1,9 @@
+<% unless photo.likers.include?(user_hash) %>
+<li class="likes" id="like">
+	<%= link_to_remote photo.likes, :url => like_user_album_photo_path(photo.album.user, photo.album, photo), :method => :get %>
+</li>
+<% else %>
+<li class="likes active" id="like">
+	<span><%= photo.likes %></span>
+</li>
+<% end %>

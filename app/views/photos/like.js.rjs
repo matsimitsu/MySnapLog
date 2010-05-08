@@ -1,0 +1,1 @@
+page.replace_html('like', :partial => 'photos/like', :locals => { :photo => @photo } )

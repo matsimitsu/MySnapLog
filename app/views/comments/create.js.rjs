@@ -1,0 +1,7 @@
+if @comment.valid?
+  page.insert_html :bottom, :comments, :partial => 'comments/comment', :locals => { :comment => @comment }
+  page.visual_effect :highlight, dom_id(@comment)
+  page['comment_form'].reset
+else
+  page << "alert('Could not place comment, please make sure all fields are filled out');"
+end
