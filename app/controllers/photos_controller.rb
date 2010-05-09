@@ -17,6 +17,10 @@ class PhotosController < ApplicationController
   def like
     @photo.like(user_hash)
     @photo.reload
+    respond_to do |format|
+      format.html { redirect_to [@photo.album.user, @photo.album, @photo] }
+      format.js
+    end
   end
   
   private
