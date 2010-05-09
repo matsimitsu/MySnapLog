@@ -17,7 +17,7 @@ class GridData < Rails::Rack::Metal
         version = match[2]
         MongoMapper.database.collection(:views).update({:version => version, :photo_id => Mongo::ObjectID.from_string(id), :time => Time.now.floor(1.hour) }, {:$inc => {:views => 1}}, :upsert => true)
         ::GridFS::GridStore.open(MongoMapper.database, key, 'r') do |file|
-          [200, {'Content-Type' => file.content_type}, [file.read]]
+          [200, {'Content-Type' => file.content_type, "Expires" => Time.now.advance(:days => 1).httpdate, 'Cache-Control' => 'max-age=31536000' }, [file.read]]
         end
       else
         [404, {'Content-Type' => 'text/plain'}, ['File not found.']]

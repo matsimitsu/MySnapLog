@@ -19122,3 +19122,100 @@ Rendering photos/like
 ["a6e0d3e450f66dd6056467808cd54bb57986bded"]
 Rendered photos/_like (0.4ms)
 Completed in 47ms (View: 2 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5eedb44e72d88af0000bb/like]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-05-09 04:22:05) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"index", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering template within layouts/application
+Rendering photos/index
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (1.2ms)
+Rendered photos/_photo (69.3ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (20.5ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (20.5ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (21.4ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (97.9ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (32.5ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (28.6ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (27.2ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (24.6ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (22.8ms)
+Completed in 663ms (View: 414 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 04:22:06) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5eedb44e72d88af0000bb/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 04:22:06) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef8044e72d8fa6000001/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 04:22:06) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f37b44e72db5d6000001/large_dsc00302.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 04:22:07) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef4444e72d88af0000c0/large_dsc00301.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 04:22:07) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f2de44e72d9a5a000001/large_dsc00290.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
