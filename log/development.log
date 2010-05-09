@@ -18444,3 +18444,118 @@ Completed in 5260ms (View: 9 | 200 OK [http://localhost/manage/albums/test-album
 
 Processing Manage::PhotosController#create (for 127.0.0.1 at 2010-05-09 01:30:48) [POST]
   Parameters: {"Filename"=>"IMG_0215.JPG", "album_id"=>"test-album", "action"=>"create", "authenticity_token"=>"vj+NHNYi02E8qYTEXaTNqA+fSuRPTgjA7atAFegbMdA=", "Upload"=>"Submit Query", "controller"=>"manage/photos", "Filedata"=>#<File:/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Tmp-/RackMultipart20100509-46617-7kctqh-0>}
+
+
+Processing Manage::PhotosController#index (for 127.0.0.1 at 2010-05-09 02:33:47) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"index", "controller"=>"manage/photos"}
+Rendering template within layouts/application
+Rendering manage/photos/index
+Rendered manage/photos/_photo (70.4ms)
+Rendered manage/photos/_photo (24.4ms)
+Rendered manage/photos/_photo (24.5ms)
+Rendered manage/photos/_photo (25.6ms)
+Rendered manage/photos/_photo (24.6ms)
+Rendered manage/photos/_photo (137.3ms)
+Rendered manage/photos/_photo (23.2ms)
+Rendered manage/photos/_photo (33.8ms)
+Rendered manage/photos/_photo (64.7ms)
+Rendered manage/photos/_photo (63.1ms)
+Rendered manage/photos/_photo (42.0ms)
+Rendered manage/photos/_photo (34.6ms)
+Completed in 872ms (View: 619 | 200 OK [http://localhost/manage/albums/test-album/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ba2444e72d879100002e/large_thumb_portret_robert_klein.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5eedb44e72d88af0000bb/large_thumb_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef4444e72d88af0000c0/large_thumb_dsc00301.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef8044e72d8fa6000001/large_thumb_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f2de44e72d9a5a000001/large_thumb_dsc00290.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:48) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f37b44e72db5d6000001/large_thumb_dsc00302.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 02:33:49) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5b68444e72d8791000001/large_thumb_me_thinking__1_of_1_.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing Manage::PhotosController#create (for 127.0.0.1 at 2010-05-09 02:33:54) [POST]
+  Parameters: {"Filename"=>"IMG_0292.JPG", "album_id"=>"test-album", "action"=>"create", "authenticity_token"=>"vj+NHNYi02E8qYTEXaTNqA+fSuRPTgjA7atAFegbMdA=", "Upload"=>"Submit Query", "controller"=>"manage/photos", "Filedata"=>#<File:/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Tmp-/RackMultipart20100509-48213-1ausz5q-0>}
+Rendered manage/photos/_photo (107.6ms)
+Completed in 5956ms (View: 110 | 200 OK [http://localhost/manage/albums/test-album/photos?_mysnaplog_session=BAh7CSIZd2FyZGVuLnVzZXIudXNlci5rZXlbB2MJVXNlcm86FE1vbmdvOjpPYmplY3RJRAY6CkBkYXRhWxFpUGkB42kOaQGJaU5pAZ1pAdppPWkBnmkAaQBpDzoQX2NzcmZfdG9rZW4iMXZqK05ITllpMDJFOHFZVEVYYVROcUErZlN1UlBUZ2pBN2F0QUZlZ2JNZEE9IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAOg9zZXNzaW9uX2lkIiVlMDAwNDUyYmFmZDVkZmRkMTY0NmYyNTdmMzUyMTk0NQ%253D%253D--29dbf228ffdce580370260fc8a0d956d9bc33715&authenticity_token=vj%252BNHNYi02E8qYTEXaTNqA%252BfSuRPTgjA7atAFegbMdA%253D]
+
+
+Processing Manage::PhotosController#create (for 127.0.0.1 at 2010-05-09 02:34:00) [POST]
+  Parameters: {"Filename"=>"IMG_0291.JPG", "album_id"=>"test-album", "action"=>"create", "authenticity_token"=>"vj+NHNYi02E8qYTEXaTNqA+fSuRPTgjA7atAFegbMdA=", "Upload"=>"Submit Query", "controller"=>"manage/photos", "Filedata"=>#<File:/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Tmp-/RackMultipart20100509-48213-1q41xnn-0>}
+Rendered manage/photos/_photo (10.4ms)
+Completed in 7269ms (View: 12 | 200 OK [http://localhost/manage/albums/test-album/photos?_mysnaplog_session=BAh7CSIZd2FyZGVuLnVzZXIudXNlci5rZXlbB2MJVXNlcm86FE1vbmdvOjpPYmplY3RJRAY6CkBkYXRhWxFpUGkB42kOaQGJaU5pAZ1pAdppPWkBnmkAaQBpDzoQX2NzcmZfdG9rZW4iMXZqK05ITllpMDJFOHFZVEVYYVROcUErZlN1UlBUZ2pBN2F0QUZlZ2JNZEE9IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAOg9zZXNzaW9uX2lkIiVlMDAwNDUyYmFmZDVkZmRkMTY0NmYyNTdmMzUyMTk0NQ%253D%253D--29dbf228ffdce580370260fc8a0d956d9bc33715&authenticity_token=vj%252BNHNYi02E8qYTEXaTNqA%252BfSuRPTgjA7atAFegbMdA%253D]
