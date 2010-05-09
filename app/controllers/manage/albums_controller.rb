@@ -6,6 +6,19 @@ class Manage::AlbumsController < ApplicationController
     @albums = current_user.albums
   end
   
+  def new
+    @album = Album.new
+  end
+  
+  def create
+    if current_user.albums.create(params[:album])
+      flash[:notice] = "Album updated!"
+      redirect_to manage_albums_path
+    else
+      render :action => :edit
+    end
+  end
+  
   def edit
   end
   

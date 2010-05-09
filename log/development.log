@@ -18559,3 +18559,206 @@ Processing Manage::PhotosController#create (for 127.0.0.1 at 2010-05-09 02:34:00
   Parameters: {"Filename"=>"IMG_0291.JPG", "album_id"=>"test-album", "action"=>"create", "authenticity_token"=>"vj+NHNYi02E8qYTEXaTNqA+fSuRPTgjA7atAFegbMdA=", "Upload"=>"Submit Query", "controller"=>"manage/photos", "Filedata"=>#<File:/var/folders/2d/2d4dV4mCFCqTdyELJ5DLoE+++TM/-Tmp-/RackMultipart20100509-48213-1q41xnn-0>}
 Rendered manage/photos/_photo (10.4ms)
 Completed in 7269ms (View: 12 | 200 OK [http://localhost/manage/albums/test-album/photos?_mysnaplog_session=BAh7CSIZd2FyZGVuLnVzZXIudXNlci5rZXlbB2MJVXNlcm86FE1vbmdvOjpPYmplY3RJRAY6CkBkYXRhWxFpUGkB42kOaQGJaU5pAZ1pAdppPWkBnmkAaQBpDzoQX2NzcmZfdG9rZW4iMXZqK05ITllpMDJFOHFZVEVYYVROcUErZlN1UlBUZ2pBN2F0QUZlZ2JNZEE9IgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsAOg9zZXNzaW9uX2lkIiVlMDAwNDUyYmFmZDVkZmRkMTY0NmYyNTdmMzUyMTk0NQ%253D%253D--29dbf228ffdce580370260fc8a0d956d9bc33715&authenticity_token=vj%252BNHNYi02E8qYTEXaTNqA%252BfSuRPTgjA7atAFegbMdA%253D]
+
+
+Processing Manage::AlbumsController#index (for 127.0.0.1 at 2010-05-09 02:44:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/index
+Rendered manage/albums/_album (246.2ms)
+Completed in 369ms (View: 344 | 200 OK [http://localhost/manage/albums]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:44:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+
+NoMethodError (undefined method `new' for #<Array:0x102cdb8a8>):
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/plugins/associations/proxy.rb:93:in `send'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/plugins/associations/proxy.rb:93:in `method_missing'
+  /Library/Ruby/Gems/1.8/gems/mongo_mapper-0.7.0/lib/mongo_mapper/support/find.rb:72:in `method_missing'
+  app/controllers/manage/albums_controller.rb:10:in `new'
+  haml (2.2.3) rails/./lib/sass/plugin/rails.rb:19:in `process'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:44:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+
+ActionView::TemplateError (manage_album_url failed to generate from {:controller=>"manage/albums", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["manage", "albums", :id] - are they all satisfied?) on line #3 of app/views/manage/albums/new.html.erb:
+1: <h1>Edit My Account</h1>
+2: 
+3: <% form_for @album, :url => manage_album_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= render :partial => "form", :object => f %>
+6:   <%= f.submit "Update" %>
+
+    (eval):16:in `manage_album_path'
+    app/views/manage/albums/new.html.erb:3
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) rails/./lib/sass/plugin/rails.rb:19:in `process'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.3) lib/warden/manager.rb:34:in `call'
+    config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendered rescues/_trace (157.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:44:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+
+ActionView::TemplateError (undefined method `mange_albums_path' for #<ActionView::Base:0x101cd5c88>) on line #3 of app/views/manage/albums/new.html.erb:
+1: <h1>Edit My Account</h1>
+2: 
+3: <% form_for [:mange, @album] do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= render :partial => "form", :object => f %>
+6:   <%= f.submit "Update" %>
+
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:169:in `form_for'
+    app/views/manage/albums/new.html.erb:3
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) rails/./lib/sass/plugin/rails.rb:19:in `process'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.3) lib/warden/manager.rb:34:in `call'
+    config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendered rescues/_trace (148.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:45:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+
+ActionView::TemplateError (undefined method `mange_albums_path' for #<ActionView::Base:0x102227948>) on line #3 of app/views/manage/albums/new.html.erb:
+1: <h1>Edit My Account</h1>
+2: 
+3: <% form_for [:mange, Album.new] do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= render :partial => "form", :object => f %>
+6:   <%= f.submit "Update" %>
+
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:169:in `form_for'
+    app/views/manage/albums/new.html.erb:3
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    haml (2.2.3) rails/./lib/sass/plugin/rails.rb:19:in `process'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:35:in `call'
+    warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+    warden (0.10.3) lib/warden/manager.rb:34:in `call'
+    config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendered rescues/_trace (145.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (2.6ms)
+Completed in 122ms (View: 107 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (2.2ms)
+Completed in 35ms (View: 11 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.5ms)
+Completed in 34ms (View: 8 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.5ms)
+Completed in 34ms (View: 8 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (2.2ms)
+Completed in 34ms (View: 8 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.6ms)
+Completed in 162ms (View: 8 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (2.0ms)
+Completed in 41ms (View: 8 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.5ms)
+Completed in 31ms (View: 7 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:46:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.5ms)
+Completed in 126ms (View: 7 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing Manage::AlbumsController#index (for 127.0.0.1 at 2010-05-09 02:47:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/index
+Rendered manage/albums/_album (317.4ms)
+Completed in 364ms (View: 333 | 200 OK [http://localhost/manage/albums]
+
+
+Processing Manage::AlbumsController#new (for 127.0.0.1 at 2010-05-09 02:47:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"manage/albums"}
+Rendering template within layouts/application
+Rendering manage/albums/new
+Rendered manage/albums/_form (1.5ms)
+Completed in 54ms (View: 11 | 200 OK [http://localhost/manage/albums/new]
