@@ -8,7 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'carrierwave'
-  config.gem 'mongo_mapper'
+  config.gem 'mongo_mapper', :version => '0.7.0'
   config.gem 'devise'
   config.gem 'will_paginate'
   config.gem 'haml'
