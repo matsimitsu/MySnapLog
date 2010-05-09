@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   helper_method :user_hash
   
   def index
-    @photos = @album.photos.paginate(:order => 'created_at', :page => params[:page], :per_page => @album.photos_per_page)
+    @photos = @album.photos.paginate(:order => 'created_at ASC', :page => params[:page], :per_page => @album.photos_per_page)
   end
   
   def show
@@ -15,7 +15,8 @@ class PhotosController < ApplicationController
   end
   
   def like
-    @photo.like(user_hash) 
+    @photo.like(user_hash)
+    @photo.reload
   end
   
   private

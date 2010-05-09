@@ -18762,3 +18762,363 @@ Rendering template within layouts/application
 Rendering manage/albums/new
 Rendered manage/albums/_form (1.5ms)
 Completed in 54ms (View: 11 | 200 OK [http://localhost/manage/albums/new]
+
+
+Processing HomepageController#show (for 127.0.0.1 at 2010-05-09 03:52:01) [GET]
+  Parameters: {"action"=>"show", "controller"=>"homepage"}
+Rendering template within layouts/application
+Rendering homepage/show
+Completed in 97ms (View: 94 | 200 OK [http://localhost/]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-05-09 03:52:09) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"index", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering template within layouts/application
+Rendering photos/index
+Rendered photos/_like (0.8ms)
+Rendered photos/_photo (129.4ms)
+Rendered photos/_like (1.9ms)
+Rendered photos/_photo (22.5ms)
+Rendered photos/_like (1.9ms)
+Rendered photos/_photo (21.3ms)
+Rendered photos/_like (1.8ms)
+Rendered photos/_photo (22.1ms)
+Rendered photos/_like (1.9ms)
+Rendered photos/_photo (21.3ms)
+Rendered photos/_like (1.8ms)
+Rendered photos/_photo (22.5ms)
+Rendered photos/_like (1.9ms)
+Rendered photos/_photo (21.7ms)
+Rendered photos/_like (1.8ms)
+Rendered photos/_photo (22.0ms)
+Rendered photos/_like (1.8ms)
+Rendered photos/_photo (21.4ms)
+Rendered photos/_like (1.8ms)
+Rendered photos/_photo (21.9ms)
+Completed in 570ms (View: 364 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5eedb44e72d88af0000bb/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef4444e72d88af0000c0/large_dsc00301.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef8044e72d8fa6000001/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f2de44e72d9a5a000001/large_dsc00290.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:52:10) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f37b44e72db5d6000001/large_dsc00302.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:52:20) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f41444e72db619000001", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (8.5ms)
+Completed in 59ms (View: 14 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f41444e72db619000001/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:52:26) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f41444e72db619000001", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (0.2ms)
+Completed in 38ms (View: 1 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f41444e72db619000001/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:52:29) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f41944e72db619000011", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (7.4ms)
+Completed in 52ms (View: 11 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f41944e72db619000011/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:53:27) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f41944e72db619000011", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (1.2ms)
+Completed in 146ms (View: 7 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f41944e72db619000011/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:53:30) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f41d44e72db619000021", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (7.1ms)
+Completed in 46ms (View: 9 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f41d44e72db619000021/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:54:11) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f42344e72db619000032", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (8.2ms)
+Completed in 49ms (View: 13 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f42344e72db619000032/like]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-05-09 03:55:08) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"index", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering template within layouts/application
+Rendering photos/index
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (1.3ms)
+Rendered photos/_photo (32.0ms)
+Rendered photos/_like (2.0ms)
+Rendered photos/_photo (23.7ms)
+Rendered photos/_like (2.0ms)
+Rendered photos/_photo (21.4ms)
+Rendered photos/_like (2.0ms)
+Rendered photos/_photo (21.5ms)
+Rendered photos/_like (2.1ms)
+Rendered photos/_photo (21.6ms)
+Rendered photos/_like (101.4ms)
+Rendered photos/_photo (123.3ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (20.4ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (19.3ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (20.2ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (19.9ms)
+Completed in 404ms (View: 354 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:55:09) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5eedb44e72d88af0000bb/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:55:09) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef4444e72d88af0000c0/large_dsc00301.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:55:09) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef8044e72d8fa6000001/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:55:09) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f2de44e72d9a5a000001/large_dsc00290.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:55:09) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f37b44e72db5d6000001/large_dsc00302.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:55:17) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f37b44e72db5d6000001", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (7.6ms)
+Completed in 50ms (View: 12 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f37b44e72db5d6000001/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:55:34) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5f2de44e72d9a5a000001", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (6.7ms)
+Completed in 48ms (View: 12 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5f2de44e72d9a5a000001/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:55:48) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5ef8044e72d8fa6000001", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+Rendered photos/_like (6.8ms)
+Completed in 50ms (View: 13 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5ef8044e72d8fa6000001/like]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2010-05-09 03:56:00) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"index", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering template within layouts/application
+Rendering photos/index
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (28.3ms)
+Rendered photos/_like (2.0ms)
+Rendered photos/_photo (23.0ms)
+Rendered photos/_like (2.1ms)
+Rendered photos/_photo (22.6ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (19.4ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (19.8ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (21.1ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.5ms)
+Rendered photos/_photo (21.0ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (19.3ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Rendered photos/_photo (20.2ms)
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.6ms)
+Rendered photos/_photo (21.5ms)
+Completed in 428ms (View: 369 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5eedb44e72d88af0000bb/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef4444e72d88af0000c0/large_dsc00301.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5ef8044e72d8fa6000001/large_dsc00304.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f2de44e72d9a5a000001/large_dsc00290.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 03:56:01) [GET]
+
+ActionController::RoutingError (No route matches "/gridfs/files/4be5f37b44e72db5d6000001/large_dsc00302.jpg" with {:method=>:get}):
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:35:in `call'
+  warden (0.10.3) lib/warden/manager.rb:34:in `catch'
+  warden (0.10.3) lib/warden/manager.rb:34:in `call'
+  config/initializers/cgi_session_hack.rb:42:in `call'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:56:23) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5ef4444e72d88af0000c0", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Completed in 142ms (View: 6 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5ef4444e72d88af0000c0/like]
+
+
+Processing PhotosController#like (for 127.0.0.1 at 2010-05-09 03:56:24) [GET]
+  Parameters: {"album_id"=>"test-album", "action"=>"like", "id"=>"4be5eedb44e72d88af0000bb", "user_id"=>"matsimitsu", "controller"=>"photos"}
+Rendering photos/like
+["a6e0d3e450f66dd6056467808cd54bb57986bded"]
+Rendered photos/_like (0.4ms)
+Completed in 47ms (View: 2 | 200 OK [http://localhost/users/matsimitsu/albums/test-album/photos/4be5eedb44e72d88af0000bb/like]

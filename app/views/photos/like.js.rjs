@@ -1,1 +1,1 @@
-page.replace_html('like', :partial => 'photos/like', :locals => { :photo => @photo } )
+page.replace("like_#{dom_id(@photo)}", :partial => 'photos/like', :locals => { :photo => @photo } )
