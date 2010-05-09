@@ -22,10 +22,3 @@ Rails::Initializer.run do |config|
   config.frameworks -= [ :active_record ]
 end
 
-if defined?(PhusionPassenger)
-  PhusionPassenger.on_event(:starting_worker_process) do |forked|
-    if forked
-      # Call db.connect_to_master to reconnect here
-    end
-  end
-end
