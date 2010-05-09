@@ -1,5 +1,6 @@
 # rails metal to be used with carrierwave (gridfs) and MongoMapper
 
+require 'rubygems'
 require 'mongo'
 require 'mongo/gridfs'
 
