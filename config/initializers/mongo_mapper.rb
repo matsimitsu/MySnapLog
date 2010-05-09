@@ -9,11 +9,7 @@ if database_yaml[Rails.env] && database_yaml[Rails.env]['adapter'] == 'mongodb'
 end
 
 if defined?(PhusionPassenger)
-  PhusionPassenger.on_event(:starting_worker_process) do |forked|
-    if forked
-      MongoMapper.connection.connect_to_master to reconnect here
-    end
-  end
+   PhusionPassenger.on_event(:starting_worker_process) do |forked|
+     MongoMapper.connection.connect_to_master if forked
+   end
 end
-
-
