@@ -60,7 +60,7 @@ class Photo < Base
   end
   
   def delete_comment(comment_id)
-    comments.delete_if { |c| c.id == id }
+    comments.delete_if { |c| c.id == comment_id }
     save
   end
 end
