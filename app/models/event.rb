@@ -16,8 +16,8 @@ class Event < Base
   slug_key :name, :unique => true
   timestamps!
   
-  many :activities
-  many :photos
+  many :activities, :dependent => :destroy
+  many :photos, :dependent => :destroy
   belongs_to :manager, :class_name => 'User'
     
   scope :recent, :order => 'created_at DESC'

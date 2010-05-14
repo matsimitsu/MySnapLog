@@ -2,17 +2,20 @@ class Photo < Base
   require 'carrierwave/orm/mongomapper'
   include MongoMapper::Document
   
-  key :name, String
+  key :name,      String
   key :likers,    Array
   key :likes,     Integer, :default => 0
   key :tags,      Array
   timestamps!
   
-  many :comments
+  many :comments, :dependent => :destroy
+  
   ensure_index 'photo.likers' 
+  
   belongs_to :event
   belongs_to :user
-  many :views
+  
+  many :views, :dependent => :destroy
   
   scope :for_activity, lambda { |ids| { :order => 'created_at ASC', :limit => 5, :conditions => { :_id => ids } }}
   
@@ -31,6 +34,12 @@ class Photo < Base
   def like(hash)
     collection.update({'_id' => id, 'likers' => {'$ne' => hash}}, 
       {'$inc' => {'likes' => 1}, '$push' => {'likers' => hash}})
+      
+#    Activity.collection.update(
+#      { :event_id => event.id, :date => Date.today.midnight, :action => 'liked_photo' },
+#      { '$inc' => {'count' => 1}, '$push' => {'photos' => id} },
+#      { :safe => true, :upsert => true }
+#    )
   end
   
   def create_comment(comment)
