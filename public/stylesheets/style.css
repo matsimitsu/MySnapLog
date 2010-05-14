@@ -3,7 +3,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 62.5%;
-  background-color: #EEEEEE; }
+  background-color: #d2d2d2; }
 
 a:link, a:visited {
   color: #4083a9;
@@ -190,20 +190,17 @@ section#event_header {
     position: relative;
     margin-bottom: 20px; }
     #activities li h3 {
-      margin: 2px 0px 0px 2px;
+      font-weight: normal;
+      margin: 0;
       -moz-border-radius: 5px;
-      -moz-box-shadow: 0 1px 0 #fff;
       -webkit-border-radius: 5px;
-      -webkit-box-shadow: 0 1px 0 #fff;
       border-radius: 5px;
-      box-shadow: 0 1px 0 #fff;
-      background-color: #4f4f4f;
+      background-color: #eaeaea;
       border-radius: 5px;
       padding: 8px;
-      color: #f0f0f0;
-      text-shadow: 0 1px 0 #000; }
+      border: 1px solid #a4a4a4;
+      color: #393939; }
     #activities li ul {
-      border-top: 1px solid #f0f0f0;
       list-style-type: none;
       margin: 0;
       padding: 8px 10px; }
