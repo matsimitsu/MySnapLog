@@ -3,8 +3,8 @@ body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   color: #333
   font-size: 62.5%
-  background: #fff
-
+  background-color: #EEEEEE
+  
 a:link, a:visited
   color: #4083a9
   outline: none
@@ -23,7 +23,44 @@ div#wrapper
   width: 960px
   text-align: left
   font-size: 1.2em
-	
+  text-shadow: 0 1px 0 #ececec
+  color: #222
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 15px
+  line-height: 150%
+  
+  header#header
+    display: block
+    position: relative
+    h1
+      width: 200px
+    h1 a
+      -moz-border-radius: 5px
+      -moz-box-shadow: 0 1px 0 #fff
+      -webkit-border-radius: 5px
+      -webkit-box-shadow: 0 1px 0 #fff
+      background-color: #626262
+      border-radius: 5px
+      box-shadow: 0 1px 0 #fff
+      color: #fff
+      display: inline
+      font-weight: 400
+      line-height: 150%
+      padding: 10px
+      text-shadow: 0 1px 0 #000
+      width: 200px
+    nav
+      width: 500px
+      display: block
+      text-align: right
+      position: absolute
+      top: 0px
+      right: 0px
+      
+      ul
+        list-style-type: none
+        margin: 0
+        padding: 0
 section
   display: block
   
@@ -59,6 +96,7 @@ body.photos div#main
     -webkit-box-shadow: 3px 3px 10px #444
     -moz-box-shadow: 3px 3px 10px #444
     box-shadow: 3px 3px 10px #444
+    background-color: #fff
     
     ul
       list-style-type: none
@@ -141,12 +179,26 @@ body.photos div#main
   float: left
   width: 100px
   height: 100px
+  background-color: #fff
   -webkit-box-shadow: 2px 2px 5px #444
   -moz-box-shadow: 2px 2px 5px #444
   box-shadow: 2px 2px 5px #444
         
 section#uploader
   text-align: left
+
+section#event_header
+  text-align: left
+  
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    
+    li
+      display: inline
+      padding-right: 10px
+    
   
 .clearfix:after
   content: "."
@@ -154,4 +206,5 @@ section#uploader
   height: 0
   clear: both
   visibility: hidden
-  
+
+@import activities.sass

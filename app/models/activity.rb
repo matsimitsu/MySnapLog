@@ -7,6 +7,8 @@ class Activity < Base
   key :count,     Integer, :default => 0
   key :date,      Time
   key :photos,    Array
+  key :private,   Boolean, :default => false
+  
   timestamps!
   belongs_to :user
   belongs_to :event

@@ -4,6 +4,6 @@
 	</li>
 <% else %>
 	<li class="likes" id="like_<%= dom_id(photo)%>">
-		<%= link_to_remote photo.likes, :url => polymorphic_path([photo.event, photo]), :method => :get %>
+		<%= link_to_remote photo.likes, :url => like_event_photo_path(photo.event, photo), :method => :get %>
 	</li>
 <% end %>

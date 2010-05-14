@@ -1,3 +1,5 @@
+<%= render 'events/header', :event => @event %>
+
 <section id="photos">
 	<% @photos.each do |photo| %>
 		<%= render 'photo', :photo => photo, :size => :large, :link => [photo.event, photo] %>

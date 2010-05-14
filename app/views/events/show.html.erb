@@ -1,4 +1,4 @@
-<h2><%= @event.name %></h2>
+<%= render 'events/header', :event => @event %>
 
 <ul id="activities">
 	<% @activities.each do |activity| %>

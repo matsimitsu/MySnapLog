@@ -4,14 +4,23 @@ class PhotosController < ApplicationController
   
   find_parent_resource :field => :slug
   before_filter :load_photo, :only => [:like, :show]
+  before_filter :load_photos, :only => [:index, :grid, :medium, :large]
   helper_method :user_hash
   
   def index
-    @photos = @event.photos.paginate(:order => 'created_at ASC', :page => params[:page], :per_page => @event.photos_per_page)
+    
   end
   
   def show
-    
+  end
+  
+  def grid
+  end
+  
+  def medium
+  end
+  
+  def large
   end
   
   def like
@@ -27,6 +36,10 @@ class PhotosController < ApplicationController
   
   def user_hash
     Digest::SHA1.hexdigest("#{request.env['HTTP_USER_AGENT']}_#{request.env['REMOTE_ADDR']}")
+  end
+  
+  def load_photos
+    @photos = @event.photos.paginate(:order => 'likes DESC, created_at DESC', :page => params[:page], :per_page => @event.photos_per_page)
   end
   
   def load_photo
