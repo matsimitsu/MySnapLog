@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   helper_method :user_hash
   
   def index
-    @photos = @album.photos.paginate(:order => 'created_at ASC', :page => params[:page], :per_page => @album.photos_per_page)
+    @photos = @event.photos.paginate(:order => 'created_at ASC', :page => params[:page], :per_page => @event.photos_per_page)
   end
   
   def show
@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
     @photo.like(user_hash)
     @photo.reload
     respond_to do |format|
-      format.html { redirect_to [@photo.album.user, @photo.album, @photo] }
+      format.html { redirect_to [@photo.event.user, @photo.event, @photo] }
       format.js
     end
   end
@@ -30,6 +30,6 @@ class PhotosController < ApplicationController
   end
   
   def load_photo
-    @photo = @album.photos.find(params[:id])
+    @photo = @event.photos.find(params[:id])
   end
 end

@@ -1,4 +1,4 @@
-<% remote_form_for [photo.album.user, photo.album, photo, Comment.new], :html => { :id => 'comment_form' } do |form| %>
+<% remote_form_for [photo.event, photo, Comment.new], :html => { :id => 'comment_form' } do |form| %>
 	<%= form.label :name %><br />
 	<%= form.text_field :name %><br />
 	<br />

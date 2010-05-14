@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :load_user
   
   def show
-    redirect_to user_albums_path(@user)
+    @activities = @user.activities.paginate(:order => 'created_at DESC', :page => params[:page])
   end
   
   def load_user

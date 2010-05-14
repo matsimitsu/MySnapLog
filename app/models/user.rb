@@ -6,9 +6,13 @@ class User < Base
   
   key :username, String, :required => true
   key :slug, String
-  slug_key :username, :unique => true
+  slug_key :username
   
-  many :albums
+  validates_uniqueness_of :username
+  
+  many :activities
+  many :events
+  many :managed_events, :foreign_key => :manager_id, :class_name => 'Event'
   def to_param
     slug# or whatever you set :url_attribute to
   end

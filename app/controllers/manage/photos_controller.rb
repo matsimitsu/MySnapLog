@@ -1,14 +1,14 @@
 class Manage::PhotosController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :load_album
+  before_filter :load_event
   
   def index
-    @photos = @album.photos
+    @photos = @event.photos
   end
   
   def create
-    @photo = @album.photos.create(:image => swf_upload_data) # here you can use your favourite plugin to work with attachments
+    @photo = @event.photos.create(:image => swf_upload_data, :user_id => current_user.id)
     render :update do |page|
       page.insert_html :bottom, :photos, :partial => 'manage/photos/photo', :locals => { :photo => @photo }
     end
@@ -17,7 +17,7 @@ class Manage::PhotosController < ApplicationController
   
   private
   
-  def load_album
-    @album = Album.find_by_slug(params[:album_id])
+  def load_event
+    @event = Event.find_by_slug(params[:event_id])
   end
 end

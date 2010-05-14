@@ -1,17 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
   
-  map.resources :users do |user|
-    user.resources :albums do |album|
-      album.resources :photos, :member => { :like => :get } do |photo|
-        photo.resources :comments, :only => [:create]
-      end
+  map.resources :users
+  
+  map.resources :events do |event|
+    event.resources :photos, :member => { :like => :get } do |photo|
+      photo.resources :comments, :only => [:create]
     end
   end
   
   map.namespace :manage do |manage|
-    manage.resources :albums, :member => { :ubb => :get } do |album|
-      album.resources :photos
+    manage.resource :dashboard
+    manage.resources :events, :member => { :ubb => :get } do |event|
+      event.resources :photos
     end
     manage.resource :profile, :collection => { :edit => :get, :update => :put }
   end

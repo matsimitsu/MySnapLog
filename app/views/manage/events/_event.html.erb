@@ -1,0 +1,11 @@
+<tr id="<%= dom_id(event.id) %>">
+	<td><%= link_to event.name, manage_event_photos_path(event) %></td>
+	<td><%= event.photos.count %></td>
+	<td><%= event.comments_count %></td>
+	<td><%= event.created_at.strftime('%d-%m-%Y') %></td>
+	<td>
+		<%= link_to 'UBB', ubb_manage_event_path(event) %> - 
+		
+		<%= link_to 'edit', edit_manage_event_path(event) %>
+	</td>
+</tr>

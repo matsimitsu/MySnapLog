@@ -8,6 +8,7 @@
 	  <%= javascript_include_tag :defaults, :swf_upload %>
 		<!--[if lte IE 9]>
 			<%= javascript_include_tag 'html5' %>
+			<%= stylesheet_link_tag 'iefix' %>
 		<![endif]-->
 	</head>
 	<body class="<%= controller_name %> <%= action_name %>">

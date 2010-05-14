@@ -1,10 +1,9 @@
 <% if photo.likers.include?(user_hash) %>
 	<li class="likes active" id="like_<%= dom_id(photo)%>">
 		<span><%= photo.likes %></span>
-		<% logger.debug photo.likers.inspect %>
 	</li>
 <% else %>
 	<li class="likes" id="like_<%= dom_id(photo)%>">
-		<%= link_to_remote photo.likes, :url => like_user_album_photo_path(photo.album.user, photo.album, photo), :method => :get %>
+		<%= link_to_remote photo.likes, :url => polymorphic_path([photo.event, photo]), :method => :get %>
 	</li>
 <% end %>

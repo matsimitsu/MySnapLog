@@ -1,0 +1,8 @@
+	<% ubb_string = ''%>
+	<% @photos.each do |photo| %>
+		<% ubb_string << "[url=#{external_url(url_for([photo.event.user, photo.event, photo]))}][img]#{external_url(photo.image_url(:medium))}[/img][/url] \n\n"%>
+	<% end %>
+	
+	<%= link_to 'back to events', manage_events_path %>
+	<h3>UBB tags</h3>
+	<%= text_area_tag 'ubb', ubb_string, :rows => 50, :cols => 100 %>

@@ -1,0 +1,9 @@
+<h1>New event</h1>
+
+<% form_for @event, :url => manage_events_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Update" %>
+<% end %>
+
+<br /><%= link_to "back", manage_events_path %>

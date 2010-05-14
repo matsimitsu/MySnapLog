@@ -1,0 +1,3 @@
+<li>
+	<h3><time datetime="<%= activity.date.strftime('%Y-%m-%d')%>"><%= activity.date.strftime('%d-%m-%Y')%></time> <strong><%= link_to activity.user.username, [activity.user] %></strong> created a new event named <%= link_to activity.event.name, [activity.event] %></h3>
+</li>

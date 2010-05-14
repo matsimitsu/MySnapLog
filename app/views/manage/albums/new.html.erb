@@ -1,9 +1,0 @@
-<h1>New album</h1>
-
-<% form_for @album, :url => manage_albums_path do |f| %>
-  <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
-<% end %>
-
-<br /><%= link_to "back", manage_albums_path %>
