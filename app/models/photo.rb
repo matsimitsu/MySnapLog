@@ -21,9 +21,11 @@ class Photo < Base
   mount_uploader :image, ImageUploader
   
   def create_or_update_activity
-    activity = Activity.first_or_create(:event_id => event.id, :user_id => user.id, :date => Date.today.midnight, :action => 'uploaded_photos')
-    activity.collection.update({'_id' => activity.id, 'photos' => {'$ne' => id}}, 
-      {'$inc' => {'count' => 1}, '$push' => {'photos' => id}})
+    Activity.collection.update(
+      { :event_id => event.id, :user_id => user.id, :date => Date.today.midnight, :action => 'uploaded_photos' },
+      { '$inc' => {'count' => 1}, '$push' => {'photos' => id} },
+      { :safe => true, :upsert => true }
+    )
   end
   
   def like(hash)
