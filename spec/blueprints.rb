@@ -13,7 +13,7 @@ User.blueprint do
   email     Faker::Internet.email
   password 'secret'
   password_confirmation 'secret'
-  username  Faker::Internet.user_name
+  username  Faker::Name.name
 end
 
 Photo.blueprint do

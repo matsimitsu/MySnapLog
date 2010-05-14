@@ -10,9 +10,10 @@ class User < Base
   
   validates_uniqueness_of :username
   
-  many :activities
+  many :activities, :dependent => :destroy
   many :events
-  many :managed_events, :foreign_key => :manager_id, :class_name => 'Event'
+  many :photos, :dependent => :destroy
+  many :managed_events, :foreign_key => :manager_id, :class_name => 'Event', :dependent => :destroy
   def to_param
     slug# or whatever you set :url_attribute to
   end
