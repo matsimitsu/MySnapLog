@@ -39,3 +39,10 @@ View.blueprint do
   photo_id Photo.make.id
   version 'medium'
 end
+
+JoinRequest.blueprint do
+  body Faker::Lorem.paragraph
+  accepted false
+  user_id User.make.id
+  event_id Event.make.id
+end

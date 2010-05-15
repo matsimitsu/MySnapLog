@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require 'mongo'
-require 'mongo/gridfs'
 
 # Allow the metal piece to run in isolation
 require(File.dirname(__FILE__) + "/../../config/environment") unless defined?(Rails)
@@ -14,13 +13,14 @@ class GridData < Rails::Rack::Metal
       match = key.match(/^files\/(.+)\/([a-z]+)/).to_a
       id = match[1]
       version = match[2]
+      grid = Mongo::GridFileSystem.new(MongoMapper.database)
       
-      if ::GridFS::GridStore.exist?(MongoMapper.database, key)
-        MongoMapper.database.collection(:views).update({:version => version, :photo_id => Mongo::ObjectID.from_string(id), :time => Time.now.floor(1.hour) }, {:$inc => {:views => 1}}, :upsert => true)
-        ::GridFS::GridStore.open(MongoMapper.database, key, 'r') do |file|
+      begin
+        MongoMapper.database.collection(:views).update({:version => version, :photo_id => BSON::ObjectID.from_string(id), :time => Time.now.floor(1.hour) }, {:$inc => {:views => 1}}, :upsert => true)
+        grid.open(key, 'r') do |file|
           [200, {'Content-Type' => file.content_type, "Expires" => Time.now.advance(:days => 1).httpdate, 'Cache-Control' => 'max-age=31536000' }, [file.read]]
         end
-      else
+      rescue 
         [404, {'Content-Type' => 'text/plain'}, ['File not found.']]
       end
     else

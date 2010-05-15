@@ -46,4 +46,21 @@ describe Event do
   
   end
   
+  describe 'Joining an event' do
+    
+    before(:each) do
+      @event = Event.make
+      @user = User.make
+    end
+    
+    it "should add the user to user_ids" do
+      @event.user_ids.count == 0
+      @event.add_user(@user)
+      @event.reload
+      @event.user_ids.should == [@user.id]
+      @event.users.should == [@user]
+    end
+
+  end
+
 end
