@@ -4,7 +4,9 @@
 		<li><%= link_to 'show activity', event_path(event) %></li>
 		<li><%= link_to 'show all photos', event_photos_path(event) %></li>
 		<li><%= link_to 'show members', '#' %></li>
+		<% unless current_user && (event.manager_id == current_user.id || event.user_ids.include?(current_user.id)) %>
 		<li><%= link_to 'join event', join_event_path(event) %></li>
+		<% end %>
 		<li> | </li>
 		<li><%= link_to 'grid', '#' %></li>
 		<li><%= link_to 'medium', '#' %></li>

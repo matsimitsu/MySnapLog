@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users
   
-  map.resources :events, :member => { :join => [:get, :post] } do |event|
+  map.resources :events, :member => { :join => :get, :create_join_request => :post } do |event|
     event.resources :photos, :member => { :like => :get }, :collection => [:grid, :medium, :large] do |photo|
       photo.resources :comments, :only => [:create]
     end

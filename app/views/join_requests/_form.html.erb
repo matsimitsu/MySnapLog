@@ -1,0 +1,6 @@
+<% form_for JoinRequest.new, :url => create_join_request_event_path(event), :html => { :id => 'join_request_form' } do |form| %>
+	<%= form.label :body %><br />
+	<%= form.text_area :body %><br />
+	
+	<%= form.submit('Send request')%>
+<% end %>

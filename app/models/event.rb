@@ -3,18 +3,18 @@ class Event < Base
   include MongoMapper::Document
   include MongoMapperExt::Slugizer
   
-  key :name,            String, :required => true
-  key :slug,            String, :index => true 
-  key :public,          Boolean
-  key :photos_per_page, Integer
-  key :manager_id,      ObjectId
-  key :user_ids,        Array, :index => true 
-  
+  key :name,                  String, :required => true
+  key :public,                Boolean
+  key :photos_per_page,       Integer
+  key :manager_id,            ObjectId
+  key :user_ids,              Array, :index => true 
+  key :allow_public_uploads,  Boolean, :default => false
+  key :join_request_required, Boolean, :default => false
   
   # indexes
   ensure_index 'event.slug' 
   
-  slug_key :name, :unique => true
+  slug_key :name, :max_length => 18, :min_length => 3, :callback_type => :before_create
   timestamps!
   
   many :users, :in => :user_ids 
@@ -39,8 +39,10 @@ class Event < Base
   end
   
   def add_user(user)
-    self.add_to_set(:user_ids => user.id) 
-    Activity.create(:event_id => id, :user_id => user.id, :date => Date.today.midnight, :action => 'joined_event')
+    if not user_ids.include?(user.id)
+      add_to_set(:user_ids => user.id) 
+      Activity.create(:event_id => id, :user_id => user.id, :date => Date.today.midnight, :action => 'joined_event')
+    end
   end
   
   def to_param

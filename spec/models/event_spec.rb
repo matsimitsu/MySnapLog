@@ -60,6 +60,19 @@ describe Event do
       @event.user_ids.should == [@user.id]
       @event.users.should == [@user]
     end
+    
+    it "should add the user to user_ids without duplicates" do
+      lambda {
+        @event.add_user(@user)
+      }.should change(Activity, :count).by(1)
+      @event.reload
+      lambda {
+        @event.add_user(@user)
+      }.should change(Activity, :count).by(0)
+      
+      @event.reload
+      @event.user_ids.count.should == 1
+    end
 
   end
 
