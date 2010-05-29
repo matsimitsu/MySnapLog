@@ -2,7 +2,7 @@
 	<ul id="event_options">
 		<li><%= link_to 'show activity', event_path(event), :class => controller_name == 'events' ? 'active' : 'inactive' %></li>
 		<li><%= link_to 'show all photos', event_photos_path(event), :class => controller_name == 'photos' ? 'active' : 'inactive' %></li>
-		<li><%= link_to 'show members', '#', :class => controller_name == 'members' ? 'active' : 'inactive' %></li>
+		<!-- <li><%= link_to 'show members', '#', :class => controller_name == 'members' ? 'active' : 'inactive' %></li>-->
 		<% unless current_user && (event.manager_id == current_user.id || event.user_ids.include?(current_user.id)) %>
 		<li><%= link_to 'join event', join_event_path(event) %></li>
 		<% end %>
