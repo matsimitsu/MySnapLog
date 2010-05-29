@@ -1,1 +1,6 @@
-O hai <%= current_user.username %>
+<h2>Activities for <%= current_user.username %></h2>
+<ul id="activities">
+	<% @activities.each do |activity| %>
+		<%= render "activities/shared/#{activity.action.underscore}", :activity => activity %>
+	<% end %>
+</ul>
