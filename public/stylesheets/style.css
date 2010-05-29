@@ -63,9 +63,22 @@ div#wrapper {
       top: 10px;
       left: 195px;
       text-shadow: 0 1px 0 #000000; }
-
-section {
-  display: block; }
+  div#wrapper div#main h2 {
+    padding-top: 20px;
+    color: #666666;
+    text-align: left; }
+  div#wrapper div#main section {
+    display: block;
+    background: #fff url('/images/section_bg.jpg') repeat-x;
+    padding: 10px;
+    -webkit-box-shadow: 3px 3px 10px #000;
+    -moz-box-shadow: 3px 3px 10px #000;
+    box-shadow: 3px 3px 10px #000; }
+  div#wrapper div#main section#event_header, div#wrapper div#main section#photos {
+    background: transparent;
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
+    box-shadow: 0 0 0; }
 
 ul.uploadContainer {
   padding: 10px; }
@@ -82,75 +95,78 @@ ul.uploadContainer {
       height: 4px;
       background: #63b534; }
 
-body.photos div#main {
+body.photos div#wrapper div#main {
   text-align: center; }
-  body.photos div#main .photo {
+  body.photos div#wrapper div#main .photo {
     padding: 4px;
     display: block;
     -webkit-box-shadow: 3px 3px 10px #000;
     -moz-box-shadow: 3px 3px 10px #000;
     box-shadow: 3px 3px 10px #000;
     background-color: #fff; }
-    body.photos div#main .photo ul {
+    body.photos div#wrapper div#main .photo ul {
       list-style-type: none;
       margin: 0;
       padding: 0 30px 0 30px;
       height: 20px;
       font-size: 1.2em;
       padding-top: 2px; }
-      body.photos div#main .photo ul li {
+      body.photos div#wrapper div#main .photo ul li {
         height: 20px;
         float: right; }
-        body.photos div#main .photo ul li span, body.photos div#main .photo ul li a {
+        body.photos div#wrapper div#main .photo ul li span, body.photos div#wrapper div#main .photo ul li a {
           padding-left: 22px;
           padding-right: 10px; }
-        body.photos div#main .photo ul li.views span {
+        body.photos div#wrapper div#main .photo ul li.views span {
           background: transparent url('/images/icons/monitor.png') no-repeat; }
-        body.photos div#main .photo ul li.comments span {
+        body.photos div#wrapper div#main .photo ul li.comments span {
           background: transparent url('/images/icons/dialog.png') no-repeat; }
-        body.photos div#main .photo ul li.likes a {
+        body.photos div#wrapper div#main .photo ul li.likes a {
           background: transparent url('/images/icons/love.png') no-repeat;
           text-decoration: none;
           color: inherit; }
-        body.photos div#main .photo ul li.likes span {
+        body.photos div#wrapper div#main .photo ul li.likes span {
           background: transparent url('/images/icons/love_active.png') no-repeat; }
-        body.photos div#main .photo ul li.tags span {
+        body.photos div#wrapper div#main .photo ul li.tags span {
           background: transparent url('/images/icons/tags.png') no-repeat; }
-  body.photos div#main .photo_large_thumbnail {
+  body.photos div#wrapper div#main .photo_large_thumbnail {
     width: 180px;
     float: left;
     margin: 10px; }
-  body.photos div#main .photo_large {
+  body.photos div#wrapper div#main .photo_large {
     width: 900px;
     margin: 20px auto 50px auto; }
-  body.photos div#main section.comments {
+  body.photos div#wrapper div#main section.comments {
     text-align: left;
     margin-left: 40px;
-    margin-right: 40px;
-    background-color: #fff;
-    padding: 10px; }
-    body.photos div#main section.comments article {
+    margin-right: 40px; }
+    body.photos div#wrapper div#main section.comments h2.comments_header {
+      margin-top: 0;
+      padding-top: 0px; }
+    body.photos div#wrapper div#main section.comments article {
       display: block;
       margin-bottom: 20px; }
-      body.photos div#main section.comments article header {
+      body.photos div#wrapper div#main section.comments article header {
         font-weight: bold; }
-      body.photos div#main section.comments article div.avatar_thumbnail {
+      body.photos div#wrapper div#main section.comments article div.avatar_thumbnail {
         float: left;
         margin-right: 10px; }
-      body.photos div#main section.comments article div.body {
+      body.photos div#wrapper div#main section.comments article div.body {
         margin-left: 100px; }
-      body.photos div#main section.comments article hr {
+      body.photos div#wrapper div#main section.comments article hr {
         clear: left;
         border: none;
         border-top: dashed 1px #CCCCCC;
         color: #FFFFFF;
         background-color: #FFFFFF;
         height: 1px; }
-    body.photos div#main section.comments form {
+    body.photos div#wrapper div#main section.comments form {
       margin-top: 50px; }
-      body.photos div#main section.comments form textarea {
+      body.photos div#wrapper div#main section.comments form textarea {
         width: 100%;
-        height: 150px; }
+        height: 150px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 2px; }
 
 .thumb {
   padding: 2px;

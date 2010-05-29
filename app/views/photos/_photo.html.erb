@@ -17,6 +17,8 @@
 
 <% if defined?(show_comments) && show_comments == true %>
 <section class="comments">
+	<h2 class="comments_header">Comments</h2>
+	
 	<div id="comments">
 		<% photo.comments.each do |comment| -%>
 			<%= render 'comments/comment', :comment => comment %>
