@@ -5,7 +5,6 @@
 		<%= render 'photo', :photo => photo, :size => @size, :link => [photo.event, photo] %>
 	<% end %>
 </section>
-<br class="clear" />
-<section>
+<section class="pagination">
 <%= will_paginate @photos %>
 </section>
