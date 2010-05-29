@@ -1,6 +1,7 @@
-<figure class ="photo photo_<%= size %>" id="<% dom_id(photo) %>">
+<figure class ="photo photo_<%= size %>" id="<%= dom_id(photo) %>">
 	<%= defined?(link) ? link_to(image_tag(photo.image_url(size)), link) : image_tag(photo.image_url(size)) %>
 	<figcaption>
+		<%= link_to 'Download large version', photo.image_url(:huge), :class => 'download_link' if size == 'large'%>
 		<ul>
 			<li class="views"><span><%= photo.view_count_for_version(size) %></span></li>
 			<li class="comments"><span><%= photo.comments.count %></span></li>

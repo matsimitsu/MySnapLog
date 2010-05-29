@@ -87,6 +87,11 @@ div#wrapper
       -moz-box-shadow: 0 0 0
       box-shadow: 0 0 0
     
+    section#event_header
+      li
+        color: #bdbdbd
+        a.active
+          color: #629ad2
 ul.uploadContainer
   padding: 10px
   
@@ -119,13 +124,16 @@ body.photos div#wrapper div#main
     box-shadow: 3px 3px 10px #000
     background-color: #fff
     
+    a.download_link
+      float: left
     ul
       list-style-type: none
       margin: 0
-      padding: 0 30px 0 30px
+      padding: 0 0 0 30px
       height: 20px
-      font-size: 1.2em
+      font-size: 1.1em
       padding-top: 2px
+      margin-left: 200px
     
       li
         height: 20px
@@ -151,10 +159,20 @@ body.photos div#wrapper div#main
         &.tags span
           background: transparent url('/images/icons/tags.png') no-repeat
   
-  .photo_large_thumbnail
+  .photo_large_thumb
     width: 180px
     float: left
     margin: 10px
+    
+    ul
+      margin-left: 0
+      
+  .photo_medium
+    width: 595px
+    margin: 10px
+
+    ul
+      margin-left: 0
     
   .photo_large
     width: 900px

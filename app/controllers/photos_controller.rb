@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   helper_method :user_hash
   
   def index
-    
+    @size = params[:size] && (params[:size] == 'medium' || params[:size] == 'large') ? params[:size] : 'large_thumb'
   end
   
   def show

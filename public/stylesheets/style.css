@@ -79,6 +79,10 @@ div#wrapper {
     -webkit-box-shadow: 0 0 0;
     -moz-box-shadow: 0 0 0;
     box-shadow: 0 0 0; }
+  div#wrapper div#main section#event_header li {
+    color: #bdbdbd; }
+    div#wrapper div#main section#event_header li a.active {
+      color: #629ad2; }
 
 ul.uploadContainer {
   padding: 10px; }
@@ -104,13 +108,16 @@ body.photos div#wrapper div#main {
     -moz-box-shadow: 3px 3px 10px #000;
     box-shadow: 3px 3px 10px #000;
     background-color: #fff; }
+    body.photos div#wrapper div#main .photo a.download_link {
+      float: left; }
     body.photos div#wrapper div#main .photo ul {
       list-style-type: none;
       margin: 0;
-      padding: 0 30px 0 30px;
+      padding: 0 0 0 30px;
       height: 20px;
-      font-size: 1.2em;
-      padding-top: 2px; }
+      font-size: 1.1em;
+      padding-top: 2px;
+      margin-left: 200px; }
       body.photos div#wrapper div#main .photo ul li {
         height: 20px;
         float: right; }
@@ -129,10 +136,17 @@ body.photos div#wrapper div#main {
           background: transparent url('/images/icons/love_active.png') no-repeat; }
         body.photos div#wrapper div#main .photo ul li.tags span {
           background: transparent url('/images/icons/tags.png') no-repeat; }
-  body.photos div#wrapper div#main .photo_large_thumbnail {
+  body.photos div#wrapper div#main .photo_large_thumb {
     width: 180px;
     float: left;
     margin: 10px; }
+    body.photos div#wrapper div#main .photo_large_thumb ul {
+      margin-left: 0; }
+  body.photos div#wrapper div#main .photo_medium {
+    width: 595px;
+    margin: 10px; }
+    body.photos div#wrapper div#main .photo_medium ul {
+      margin-left: 0; }
   body.photos div#wrapper div#main .photo_large {
     width: 900px;
     margin: 20px auto 50px auto; }
