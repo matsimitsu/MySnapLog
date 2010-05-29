@@ -5,6 +5,7 @@ class Photo < Base
   key :name,      String
   key :likers,    Array
   key :likes,     Integer, :default => 0
+  key :comments_count, Integer, :default => 0
   key :tags,      Array
   key :source,    String
   timestamps!
@@ -44,8 +45,8 @@ class Photo < Base
   end
   
   def create_comment(comment)
-    comments << comment
-    save
+    collection.update({'_id' => id}, 
+      {'$inc' => {'comments_count' => 1}, '$push' => {'comments' => comment.as_json}})
   end
   
   def view_count(grouping)

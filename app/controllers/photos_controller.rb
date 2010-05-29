@@ -4,23 +4,21 @@ class PhotosController < ApplicationController
   
   find_parent_resource :field => :slug
   before_filter :load_photo, :only => [:like, :show]
-  before_filter :load_photos, :only => [:index, :grid, :medium, :large]
   helper_method :user_hash
   
   def index
     @size = params[:size] && (params[:size] == 'medium' || params[:size] == 'large') ? params[:size] : 'large_thumb'
+    if params[:order] && params[:order] == 'comments'
+      @order = 'comments_count DESC'
+    elsif params[:order] && params[:order] == 'recent'
+      @order = 'created_at ASC'
+    else
+      @order = 'likes DESC'
+    end
+    @photos = @event.photos.paginate(:order => 'likes DESC, created_at DESC', :page => params[:page], :per_page => @event.photos_per_page, :order => @order)
   end
   
   def show
-  end
-  
-  def grid
-  end
-  
-  def medium
-  end
-  
-  def large
   end
   
   def like
@@ -39,7 +37,7 @@ class PhotosController < ApplicationController
   end
   
   def load_photos
-    @photos = @event.photos.paginate(:order => 'likes DESC, created_at DESC', :page => params[:page], :per_page => @event.photos_per_page)
+    
   end
   
   def load_photo

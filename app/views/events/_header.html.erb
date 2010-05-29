@@ -8,9 +8,13 @@
 		<% end %>
 		<% if controller_name == 'photos' %>
 			<li> Layout: </li>
-			<li><%= link_to 'thumbnails', 	event_photos_path(event), :class => controller_name == 'photos' && @size == 'large_thumb' ? 'active' : 'inactive' %></li>
+			<li><%= link_to 'thumbnails', 	event_photos_path(event), :class => @size == 'large_thumb' ? 'active' : 'inactive' %></li>
 			<!-- <li><%# link_to 'medium', event_photos_path(event, :size => 'medium'), :class => controller_name == 'photos' &&  @size == 'medium'  ? 'active' : 'inactive' %></li>-->
-			<li><%= link_to 'large photos', 	event_photos_path(event, :size => 'large'), :class => controller_name == 'photos'  &&  @size == 'large' ? 'active' : 'inactive' %></li>
+			<li><%= link_to 'large photos', 	event_photos_path(event, :size => 'large'), :class => @size == 'large' ? 'active' : 'inactive' %></li>
+			<li> Order: </li>
+			<li><%= link_to 'best liked', 	event_photos_path(event, :order => 'liked'), :class => params[:order] == 'liked' ? 'active' : 'inactive' %></li>
+			<li><%= link_to 'most comments', 	event_photos_path(event, :order => 'comments'), :class => params[:order] == 'comments' ? 'active' : 'inactive' %></li>
+			<li><%= link_to 'most recent', 	event_photos_path(event, :order => 'recent'), :class => params[:order] == 'recent' ? 'active' : 'inactive' %></li>
 		<% end %>
 	</ul>
 </section>

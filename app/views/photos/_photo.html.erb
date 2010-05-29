@@ -4,7 +4,7 @@
 		<%= link_to 'Download large version', photo.image_url(:huge), :class => 'download_link' if size == 'large'%>
 		<ul>
 			<li class="views"><span><%= photo.view_count_for_version(size) %></span></li>
-			<li class="comments"><span><%= photo.comments.count %></span></li>
+			<li class="comments"><span><%= photo.comments_count %></span></li>
 			<%= render 'photos/like', :photo => photo %>
 			<% if photo.tags.any? %>
 				<li class="tags">
