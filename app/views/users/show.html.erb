@@ -1,7 +1,0 @@
-<h2><%= @user.username %></h2>
-
-<ul id="activities">
-	<% @activities.each do |activity| %>
-		<%= render "activities/shared/#{activity.action.underscore}", :activity => activity %>
-	<% end %>
-</ul>

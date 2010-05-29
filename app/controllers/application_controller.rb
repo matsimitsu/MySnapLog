@@ -6,7 +6,13 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password, :password_confirmation
   before_filter :load_user
-
+  
+  private
+  
+  def load_event
+    @event = Event.find_by_slug(params[:event_id])
+  end
+  
   def load_user
     @user = User.find_by_slug(params[:user_id])
   end

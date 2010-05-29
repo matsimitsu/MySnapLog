@@ -5,6 +5,7 @@ class User < Base
   devise :registerable, :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
   
   key :username, String, :required => true
+  key :flickr_token, String
   key :slug, String
   slug_key :username
   
@@ -18,4 +19,7 @@ class User < Base
     slug# or whatever you set :url_attribute to
   end
   
+  def set_flickr_token(token)
+    update_attributes(:flickr_token => token)
+  end
 end

@@ -7,7 +7,7 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'mongo_mapper', :version => '0.7.5'
+  config.gem 'mongo_mapper', :version => '0.7.6'
   config.gem 'carrierwave', :version => '0.4.4'
   config.gem 'devise'
   config.gem 'will_paginate'
@@ -16,6 +16,9 @@ Rails::Initializer.run do |config|
   config.gem 'mongomapper_ext'
   config.gem 'will_paginate'
   config.gem 'scopify'
+  config.gem 'fleakr'
+  config.gem 'navvy'
+  
   config.time_zone = 'UTC'
   config.frameworks -= [ :active_record ]
 end

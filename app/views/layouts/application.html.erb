@@ -16,6 +16,9 @@
 			<div id="wrapper">
 				<header id="header">
 					<h1><%= link_to('MySnapLog', root_path) %></h1>
+					<% if @event && !@event.new_record? %>
+						<h2><%= @event.name %></h2>
+					<% end %>
 					<nav>
 						<%= render 'layouts/menu' %>
 					</nav>

@@ -10,3 +10,4 @@ db/schema.rb
 vendor/rails
 public/uploads
 log/*
+config/initializers/flickr.rb

@@ -11,5 +11,5 @@ module ApplicationHelper
     else
       "#{request.protocol}#{request.host}#{path}"
     end
-  end   
+  end
 end

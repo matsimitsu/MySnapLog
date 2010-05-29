@@ -13,8 +13,10 @@ ActionController::Routing::Routes.draw do |map|
     manage.resource :dashboard
     manage.resources :events, :member => { :ubb => :get } do |event|
       event.resources :photos
+      event.resource :flickr, :controller => 'flickr', :collection => { :index => :get, :import => :get }
     end
     manage.resource :profile, :collection => { :edit => :get, :update => :put }
+    manage.resource :flickr, :controller => 'flickr', :collection => { :return_url => :get }
   end
 
   # root

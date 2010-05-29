@@ -1,0 +1,21 @@
+<% unless @flickr_user %>
+<p>Please authenticate on flickr: <%= link_to 'go to flickr', @auth_url %>
+<% else %>
+	<p>Select one of the sets to import</p>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Photos</th>
+			<th>View set</th>
+			<th></th>
+		</tr>
+	<% @sets.each do |set| %>
+		<tr>
+			<td><%= set.title %></td>
+			<td><%= set.count %></td>
+			<td><%= link_to 'View set', set.url%></td>
+			<td><%= link_to 'Import', import_manage_event_flickr_path(@event, :id => set.id) %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>

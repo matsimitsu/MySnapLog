@@ -6,6 +6,7 @@ class Photo < Base
   key :likers,    Array
   key :likes,     Integer, :default => 0
   key :tags,      Array
+  key :source,    String
   timestamps!
   
   many :comments, :dependent => :destroy
