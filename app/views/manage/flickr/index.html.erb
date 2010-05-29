@@ -1,3 +1,5 @@
+<h2>Import photos from Flickr</h2>
+<section>
 <% unless @flickr_user %>
 <p>Please authenticate on flickr: <%= link_to 'go to flickr', @auth_url %>
 <% else %>
@@ -19,3 +21,4 @@
 	<% end %>
 	</table>
 <% end %>
+</section>

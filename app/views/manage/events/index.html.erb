@@ -1,13 +1,16 @@
-<%= link_to 'New event', new_manage_event_path %>
-<table id="events">
-	<tr>
-		<th>Name</th>
-		<th>Photos</th>
-		<th>Comments</th>
-		<th>Created</th>
-		<th>Actions</th>
-	</tr>
-	<% @events.each do |event| %>
-		<%= render 'event', :event => event %>
-	<% end %>
-</table>
+<h2>Your events</h2>
+<section>
+	<%= link_to 'New event', new_manage_event_path %>
+	<table id="events">
+		<tr>
+			<th>Name</th>
+			<th>Photos</th>
+			<th>Comments</th>
+			<th>Created</th>
+			<th>Actions</th>
+		</tr>
+		<% @events.each do |event| %>
+			<%= render 'event', :event => event %>
+		<% end %>
+	</table>
+</section>

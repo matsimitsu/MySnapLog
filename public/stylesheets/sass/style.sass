@@ -59,6 +59,9 @@ div#wrapper
         list-style-type: none
         margin: 0
         padding: 0
+        
+        li
+          display: inline
     h2
       color: #666666
       position: absolute
@@ -80,7 +83,6 @@ div#wrapper
       -moz-box-shadow: 3px 3px 10px #000
       box-shadow: 3px 3px 10px #000
   
-  
     section#event_header, section#photos
       background: transparent
       -webkit-box-shadow: 0 0 0
@@ -92,25 +94,40 @@ div#wrapper
         color: #bdbdbd
         a.active
           color: #629ad2
-ul.uploadContainer
-  padding: 10px
+    section#uploader
+      h2
+        padding-top: 0px
+        margin-top: 5px
+
+      ul.uploadContainer
+        padding: 10px
+        display: block
+        height: 80px
+        overflow: auto
+        border: 1px dashed #bdbdbd
+        list-style-type: none
+        padding: 0
+        margin: 0
   
-  li 
-    font-size: 14px
-    position: relative
-    height: 22px
+        li 
+          font-size: 14px
+          position: relative
+          height: 22px
     
-    h6 font-size: 14px
+          h6 
+            font-size: 14px
+            margin: 0
+            padding: 2px
     
-    div.bar 
-      width: 100%
-      height: 4px
+          div.bar 
+            width: 100%
+            height: 4px
     
-    div.progress
-      position: absolute
-      top: 17px
-      height: 4px
-      background: #63b534
+          div.progress
+            position: absolute
+            top: 17px
+            height: 4px
+            background: #63b534
   
 body.photos div#wrapper div#main
   text-align: center

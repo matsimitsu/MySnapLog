@@ -1,5 +1,5 @@
-<h1>Edit event</h1>
-
+<h2>Edit event</h2>
+<section>
 <% form_for @event, :url => manage_event_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
@@ -7,3 +7,4 @@
 <% end %>
 
 <br /><%= link_to "back", manage_events_path %>
+</section>
