@@ -19,6 +19,10 @@ Rails::Initializer.run do |config|
   config.gem 'fleakr'
   config.gem 'navvy'
   
+  config.gem 'postmark-rails'
+  require 'postmark-rails'
+  config.action_mailer.postmark_api_key = "52329963-4c4d-4ebc-ad88-63b45aa2a063"
+  
   config.time_zone = 'UTC'
   config.frameworks -= [ :active_record ]
 end

@@ -16,6 +16,8 @@ role :web, 'nzbtv.com'
 role :db,  'nzbtv.com', :primary => true
 
 set :deploy_to, "/Sites/#{application}/app"
+before  "deploy:finalize_update", "worker:stop"
+after   "deploy:finalize_update", "worker:start"
 
 task :tail do
   run "tail -f #{deploy_to}/shared/log/production.log"
@@ -34,3 +36,16 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 end
+
+namespace :worker do
+  task :start, :roles => :app do
+    run "god -c #{current_path}/config/navvy.god start"
+  end
+  
+  task :stop, :roles => :app do
+    run "god -c #{current_path}/config/navvy.god stop"
+  end
+end
+
+
+

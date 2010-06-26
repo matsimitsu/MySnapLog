@@ -8,4 +8,11 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
-require 'navvy/tasks'
+begin
+  require 'navvy/tasks'
+rescue LoadError
+  namespace :navvy do
+    abort "Couldn't find Navvy. " << 
+      "Please run `gem install navvy` to use Navvy's tasks."
+  end
+end
