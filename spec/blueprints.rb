@@ -1,6 +1,3 @@
-require 'machinist/mongo_mapper'
-require 'sham'
-require 'faker'
 
 Event.blueprint do
   name            Faker::Name.name

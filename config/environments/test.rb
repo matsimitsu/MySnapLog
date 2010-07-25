@@ -27,9 +27,3 @@ config.action_mailer.delivery_method = :test
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
 
-config.gem 'rspec', :lib => 'spec'
-config.gem 'rspec-rails', :lib => 'spec/rails'
-config.gem 'machinist_mongo', :version => '1.1.0', :lib => 'machinist/mongo_mapper'
-config.gem 'faker'
-config.gem 'steak'
-config.gem 'capybara'

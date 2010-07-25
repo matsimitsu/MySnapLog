@@ -47,6 +47,17 @@ class Photo < Base
   def create_comment(comment)
     collection.update({'_id' => id}, 
       {'$inc' => {'comments_count' => 1}, '$push' => {'comments' => comment.as_json}})
+      
+    Activity.create(
+      :event_id => event.id,
+      :date => Date.today.midnight,
+      :action => 'new_comment',
+      :photos => [id],
+      :count => 1,
+      :source => comment.as_json,
+      :private => true,
+      :user => user
+    )
   end
   
   def view_count(grouping)

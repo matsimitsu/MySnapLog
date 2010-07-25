@@ -18,6 +18,7 @@ role :db,  'nzbtv.com', :primary => true
 set :deploy_to, "/Sites/#{application}/app"
 before  "deploy:finalize_update", "worker:stop"
 after   "deploy:finalize_update", "worker:start"
+after 'deploy:update_code', 'deploy:bundle'
 
 task :tail do
   run "tail -f #{deploy_to}/shared/log/production.log"
@@ -27,13 +28,20 @@ namespace :deploy do
   task :start, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
   end
+  
   task :finalize_update, :roles => :app do
     run "ln -s #{deploy_to}/shared/log #{release_path}/log"
     run "ln -s #{deploy_to}/shared/tmp #{release_path}/tmp" 
     run "ln -s #{deploy_to}/shared/system #{release_path}/public/system"
   end
+  
   task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
+  end
+  
+  desc "Install bundled gems into ./.bundle"
+  task :bundle do
+    run "cd #{release_path}; bundle install .bundle"
   end
 end
 

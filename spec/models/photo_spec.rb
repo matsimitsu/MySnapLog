@@ -64,6 +64,13 @@ describe Photo do
       @photo.comments.should include(comment)
     end
     
+    it "should create an activity" do
+      comment = Comment.make
+      lambda {
+        @photo.create_comment(comment)
+      }.should change(Activity, :count).by(1)
+    end
+    
     it "should delete a comment" do
       comment = Comment.make
       @photo.create_comment(comment)
