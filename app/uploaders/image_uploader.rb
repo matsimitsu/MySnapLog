@@ -2,10 +2,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::ImageScience
     
   storage :grid_fs
-  
-  def store_dir 
-    "files/#{model.id}" 
-  end 
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{model.id}"
+  end
   
   def extension_white_list
     %w(jpg jpeg gif png)
