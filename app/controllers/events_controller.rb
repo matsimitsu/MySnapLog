@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @activities = @event.activities.paginate(:order => 'created_at DESC', :page => params[:page])
+    @activities = @event.activities.paginate(:order => 'id DESC', :page => params[:page])
   end
   
   def join
