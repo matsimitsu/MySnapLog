@@ -1,15 +1,18 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::ImageScience
     
-  storage :grid_fs
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}" 
+  end  
+  
+  def url(version=nil)
+    "/files/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}/#{version}_#{versions[version.to_sym].model.image_filename}" 
   end
   
   def extension_white_list
     %w(jpg jpeg gif png)
   end
-  
+        
   version :small_thumb do
     process :resize_to_fill => [100,100]
   end
