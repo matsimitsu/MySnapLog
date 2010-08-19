@@ -16,7 +16,7 @@
 	</figcaption>
 </figure>
 
-<% if defined?(show_comments) && show_comments == true %>
+<% if defined?(show_comments) && show_comments == true && photo.event.allow_comments == true %>
 <section class="comments">
 	<h2 class="comments_header">Comments</h2>
 	

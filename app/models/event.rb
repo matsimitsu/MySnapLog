@@ -10,6 +10,7 @@ class Event < Base
   key :user_ids,              Array, :index => true 
   key :allow_public_uploads,  Boolean, :default => false
   key :join_request_required, Boolean, :default => false
+  key :allow_comments,        Boolean, :default => true
   
   # indexes
   ensure_index 'event.slug' 

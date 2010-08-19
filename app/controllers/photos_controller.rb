@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
     if params[:order] && params[:order] == 'comments'
       @order = 'comments_count DESC'
     elsif params[:order] && params[:order] == 'recent'
-      @order = 'created_at ASC'
+      @order = 'id DESC'
     else
       @order = 'likes DESC'
     end
