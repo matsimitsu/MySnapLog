@@ -1,5 +1,5 @@
 <li>
-	<h3><time datetime="<%= activity.date.strftime('%Y-%m-%d')%>"><%= activity.date.strftime('%d-%m-%Y')%></time> <strong><%= link_to activity.user.username, [activity.user] %></strong> uploaded <%= activity.count %> new photos to <%= link_to activity.event.name, [activity.event] %> <small>(<%= link_to 'view all photos', [activity.event, :photos] %>)</h3>
+	<h3><time datetime="<%= activity.date.strftime('%Y-%m-%d')%>"><%= activity.date.strftime('%d-%m-%Y')%></time> <strong><%= link_to activity.user.username, [activity.user] %></strong> uploaded <strong><%= activity.count %></strong> new photos to <%= link_to activity.event.name, [activity.event] %> <small>(<%= link_to 'view all photos', [activity.event, :photos] %>)</small></h3>
 	<ul id="activity_photos" class="photo_list clearfix">
 		<% Photo.for_activity(activity.photos).all.each do |photo| %>
 			<%= link_to(image_tag(photo.image_url(:small_thumb), :class => 'thumb', :alt => ''), [photo.event, photo]) %>

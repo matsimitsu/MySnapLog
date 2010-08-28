@@ -2,8 +2,9 @@
 <% @photos.each do |photo| %>
 	<% ubb_string << "[url=#{external_url(url_for([photo.event, photo]))}][img]#{external_url(photo.image_url(:medium))}[/img][/url] \n\n"%>
 <% end %>
-
-<h2>UBB Tags</h2>
+<div class="manage_header">
+	<h2>UBB Tags</h2>
+</div>
 <section>	
 	<p class="info">Use these ubb tags to show the photos on a forum</p>
 	<%= text_area_tag 'ubb', ubb_string, :rows => 50, :cols => 100 %><br />

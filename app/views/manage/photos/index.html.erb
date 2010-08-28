@@ -1,4 +1,6 @@
-<h2>Upload new photos</h2>
+<div class="manage_header">
+	<h2>Upload new photos</h2>
+</div>
 <section id="uploader">
 <%= swf_upload_area 'Add Photos', :url => manage_event_photos_path(@event),
  				:filetypes => "*.jpg; *.gif; *.png",
@@ -8,6 +10,6 @@
 </section>
 <ul id="photos">
 	<% @photos.each do |photo| %>
-		<%= render 'photo', :photo => photo %>
+		<li><%= render 'photo', :photo => photo %></li>
 	<% end %>
 </ul>

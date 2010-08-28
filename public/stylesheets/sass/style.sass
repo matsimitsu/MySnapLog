@@ -5,17 +5,41 @@ body
   font-size: 62.5%
   background-color: #222222
   background: #222222 url('/images/body_bg.jpg') repeat-x
+  padding-top: 0px
+  margin-top: 0px
 a:link, a:visited
-  color: #336699
+  color: #639ad1
   outline: none
   text-decoration: none
 
 a:hover
   text-decoration: none
-  color: #205f82
+  color: #336699
 
 a img
   border: 0
+
+
+table
+  width: 100%
+  margin-bottom: 25px
+  border-collapse: collapse
+  
+  th
+    background-color: #e8f0f3
+    color: #6c7073
+    padding: 5px
+
+  td
+    color: #898989
+    padding: 5px
+    
+    a
+      color: #898989
+      font-weight: bold
+
+      &:hover
+        color: #336699
 
 div#wrapper
   margin: auto
@@ -29,30 +53,40 @@ div#wrapper
   
   header#header
     display: block
-    position: relative
+    width: 960px
+    height: 50px
     h1
-      width: 200px
-    h1 a
-      -moz-border-radius: 5px
-      -moz-box-shadow: 0 1px 0 #121212
-      -webkit-border-radius: 5px
-      -webkit-box-shadow: 0 1px 0 #121212
-      background-color: #343434
-      border-radius: 5px
-      color: #bdbdbd
-      display: inline
-      font-weight: 400
-      line-height: 150%
-      padding: 10px
-      width: 200px
-      text-shadow: 0 1px 0 #121212
+      float: left
+      width: 110px
+      margin-top: 0px
+      margin-bottom: 0px
+      a
+        -moz-border-radius: 0px 0px 5px 5px
+        -moz-box-shadow: 0 1px 0 #121212
+        -webkit-border-radius: 0px 0px 5px 5px
+        -webkit-box-shadow: 0 1px 0 #121212
+        background-color: #343434
+        border-radius: 0px 0px 5px 5px
+        color: #bdbdbd
+        display: inline
+        line-height: 150%
+        font-weight: normal
+        padding: 10px
+        width: 200px
+        font-size: 0.5em
     nav
-      width: 500px
+      float: right
       display: block
       text-align: right
-      position: absolute
-      top: 0px
-      right: 0px
+      margin-top: 0px
+      padding: 2px 10px
+      -moz-border-radius: 0px 0px 5px 5px
+      -moz-box-shadow: 0 1px 0 #121212
+      -webkit-border-radius: 0px 0px 5px 5px
+      -webkit-box-shadow: 0 1px 0 #121212
+      background-color: #343434
+      border-radius: 0px 0px 5px 5px
+      color: #222222
       
       ul
         list-style-type: none
@@ -62,11 +96,13 @@ div#wrapper
         li
           display: inline
     h2
-      color: #666666
-      position: absolute
-      top: 10px
-      left: 195px
-      text-shadow: 0 1px 0 #000000
+      margin: 0
+      padding: 0
+      margin-top: 7px
+      font-size: 45px
+      color: #343434
+      float: left
+      text-shadow: 0 1px 1px #141414
   
   div#main
     h2
@@ -81,7 +117,7 @@ div#wrapper
       -webkit-box-shadow: 3px 3px 10px #000
       -moz-box-shadow: 3px 3px 10px #000
       box-shadow: 3px 3px 10px #000
-  
+        
     section#event_header, section#photos
       background: transparent
       -webkit-box-shadow: 0 0 0
@@ -89,6 +125,7 @@ div#wrapper
       box-shadow: 0 0 0
     
     section#event_header
+      text-align: center
       li
         color: #bdbdbd
         a.active
@@ -130,7 +167,6 @@ div#wrapper
   
 body.photos div#wrapper div#main
   text-align: center
-  
   
   .photo
     padding: 4px
@@ -233,6 +269,18 @@ body.photos div#wrapper div#main
         padding: 2px
 
 
+.button
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  color: white
+  font-weight: 400
+  line-height: 150%
+  padding: 5px 10px
+  background-color: #639ad1
+  &:hover
+    background-color: #336699
+  
 .thumb
   padding: 2px
   display: block
@@ -251,6 +299,23 @@ section.pagination
         
 section#uploader
   text-align: left
+
+
+div#wrapper div#main div.manage_header
+  padding: 10px
+  background-color: white
+  height: 50px
+  h2
+    margin-top: 20px
+    margin-bottom: 0
+    padding: 5px 5px 5px 5px
+    width: 500px
+    float: left
+  a
+    float: right
+    margin-top: 20px
+    color: white
+
 
 section#event_header
   text-align: left
@@ -272,4 +337,13 @@ section#event_header
   clear: both
   visibility: hidden
 
+
+ul#photos
+  margin: 0 0 0 10px
+  padding: 0
+  li
+    margin: 0
+    paddign: 0
+    float: left
 @import activities.sass
+@import events.sass

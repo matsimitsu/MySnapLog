@@ -4,9 +4,8 @@
 	<td><%= event.comments_count %></td>
 	<td><%= event.created_at.strftime('%d-%m-%Y') %></td>
 	<td>
-		<%= link_to 'UBB', ubb_manage_event_path(event) %> - 
-		
-		<%= link_to 'edit', edit_manage_event_path(event) %> -
-		<%= link_to 'flickr', index_manage_event_flickr_path(event) %>
+		<%# link_to 'UBB', ubb_manage_event_path(event) %>
+		<%= link_to 'Edit', edit_manage_event_path(event) %>
+		<%# link_to 'flickr', index_manage_event_flickr_path(event) %>
 	</td>
 </tr>

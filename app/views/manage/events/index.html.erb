@@ -1,6 +1,8 @@
-<h2>Your events</h2>
+<div class="manage_header">
+	<h2>Your events</h2>
+	<%= link_to 'New event', new_manage_event_path, :class => 'button new_event' %>
+</div>
 <section>
-	<%= link_to 'New event', new_manage_event_path %>
 	<table id="events">
 		<tr>
 			<th>Name</th>
