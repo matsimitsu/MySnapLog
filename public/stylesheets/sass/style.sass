@@ -98,8 +98,8 @@ div#wrapper
     h2
       margin: 0
       padding: 0
-      margin-top: 7px
-      font-size: 45px
+      margin-top: 5px
+      font-size: 40px
       color: #343434
       float: left
       text-shadow: 0 1px 1px #141414
@@ -178,6 +178,9 @@ body.photos div#wrapper div#main
     
     a.download_link
       float: left
+      background: transparent url('/images/icons/download.png') no-repeat left center
+      padding-left: 18px
+      margin-left: 10px
     ul
       list-style-type: none
       margin: 0
@@ -188,29 +191,30 @@ body.photos div#wrapper div#main
       margin-left: 200px
     
       li
-        height: 20px
+        height: 15px
         float: right
         span, a
-          padding-left: 22px
+          padding-left: 18px
           padding-right: 10px
-  
+        span a
+          padding: 0
         &.views span
-          background: transparent url('/images/icons/monitor.png') no-repeat
+          background: transparent url('/images/icons/monitor.png') no-repeat left center
     
         &.comments span
-          background: transparent url('/images/icons/dialog.png') no-repeat
+          background: transparent url('/images/icons/dialog.png') no-repeat left center
     
         &.likes a
-          background: transparent url('/images/icons/love.png') no-repeat
+          background: transparent url('/images/icons/love.png') no-repeat left center
           text-decoration: none
           color: inherit
     
         &.likes span
-          background: transparent url('/images/icons/love_active.png') no-repeat
+          background: transparent url('/images/icons/love_active.png') no-repeat left center
 
         &.tags span
-          background: transparent url('/images/icons/tags.png') no-repeat
-  
+          background: transparent url('/images/icons/tags.png') no-repeat left center
+        
   .photo_large_thumb
     width: 180px
     float: left
@@ -306,7 +310,7 @@ div#wrapper div#main div.manage_header
   background-color: white
   height: 50px
   h2
-    margin-top: 20px
+    margin-top: 15px
     margin-bottom: 0
     padding: 5px 5px 5px 5px
     width: 500px
@@ -316,6 +320,64 @@ div#wrapper div#main div.manage_header
     margin-top: 20px
     color: white
 
+section.stats
+  text-align: left
+  color: #898989
+  
+  a#photo
+    float: left
+    margin-right: 10px
+    background-color: white
+    
+    img
+      margin: 5px
+      border: 1px solid #bdbdbd
+    
+  h3
+    clear: both
+    margin-right: 10px
+  
+  ul#info
+    float: left
+    list-style-type: none
+    margin: 0
+    padding: 0
+    margin-top: 10px
+    
+    li 
+      font-weight: bold
+      span
+        display: inline-block
+        width: 100px
+        font-weight: normal
+        
+  ul#numbers
+    float: right
+    list-style-type: none
+    margin: 0
+    padding: 0
+    margin-top: 10px
+    
+    text-transform: uppercase
+
+    li
+      float: left
+      margin: 0
+      padding: 0
+      display: block
+      width: 100px
+      text-align: center
+
+      span.counter
+        font-size: 3em
+        padding-bottom: 2px
+        display: block
+
+
+  
+  .sparkline
+    svg
+      border-bottom: 1px solid #bdbdbd
 
 section#event_header
   text-align: left

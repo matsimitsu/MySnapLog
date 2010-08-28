@@ -1,7 +1,8 @@
 class View < Base
   include MongoMapper::Document
   
-  key :time,      String
+  key :date,      Date
+  key :time,      DateTime
   key :views,     Integer, :default => 0
   key :version,   String
   

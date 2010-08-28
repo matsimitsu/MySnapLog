@@ -61,15 +61,40 @@ class Photo < Base
   end
   
   def view_count(grouping)
-    View.collection.group([grouping], 
+    View.collection.group(grouping, 
       { :photo_id => id }, 
       {'sum' => 0},
       "function(doc, prev) { prev.sum += doc.views}",
       true)
   end
   
+  def view_count_for_version_by_day(version, days=30)
+    return_data = []
+    data = View.collection.group(['version', 'date'], 
+      { :photo_id => id, :date => { '$gt' => days.days.ago.midnight.utc } }, 
+      {'sum' => 0},
+      "function(doc, prev) { prev.sum += doc.views}",
+      true).select{|vc| vc['version'] == version.to_s }
+      puts data.inspect
+      puts 1.days.ago.to_date.inspect
+      (0..days).to_a.reverse.each do |i|
+        return_data << { :date => i.days.ago.strftime("%d-%m-%Y"), :count => data.select { |d| d['date'].to_date == i.days.ago.to_date }.map{ |d| d['sum'].to_i }.first || 0 }
+      end
+      return_data
+  end
+  
+  def latest_referers(limit=30)
+    data = View.collection.group(['referer'], 
+      { :photo_id => id, :date => { '$gt' => 30.days.ago.midnight.utc } }, 
+      {'sum' => 0},
+      "function(doc, prev) { prev.sum += doc.views}",
+      true)
+      data.sort_by{ |d| d['sum']}.reverse[0..limit]
+  end
+  
+  
   def view_count_for_version(version)
-    view_count('version').select{|vc| vc['version'] == version.to_s }.first['sum'].to_i rescue 0
+    view_count(['version']).select{|vc| vc['version'] == version.to_s }.first['sum'].to_i rescue 0
   end
   
   def delete_comment(comment_id)

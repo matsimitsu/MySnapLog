@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :manage do |manage|
     manage.resource :dashboard
     manage.resources :events, :member => { :ubb => :get } do |event|
-      event.resources :photos
+      event.resources :photos, :member => [:stats]
       event.resource :flickr, :controller => 'flickr', :collection => { :index => :get, :import => :get }
     end
     manage.resource :profile, :collection => { :edit => :get, :update => :put }

@@ -15,4 +15,7 @@ class Manage::PhotosController < ApplicationController
     
   end
   
+  def stats
+    @photo = @event.photos.find(params[:id])
+  end
 end

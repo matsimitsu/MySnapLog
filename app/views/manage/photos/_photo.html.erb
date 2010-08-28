@@ -2,9 +2,10 @@
 	<%= link_to(image_tag(photo.image_url(:large_thumb)), [photo.event, photo]) %>
 	<figcaption>
 		<ul>
-			<li class="views"><span><%= photo.view_count_for_version(:thumb) %></span></li>
+			<li class="stats"></li>
+			<li class="views"><span><%= link_to photo.view_count_for_version(:large), stats_manage_event_photo_path(photo.event, photo)%></span></li>
 			<li class="comments"><span><%= photo.comments.count %></span></li>
-			<li class="likes active" id="like">
+			<li class="likes" id="like">
 				<span><%= photo.likes %></span>
 			</li>
 		</ul>

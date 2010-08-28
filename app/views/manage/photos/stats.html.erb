@@ -1,0 +1,62 @@
+<div class="manage_header">
+	<h2>Stats for <%= @photo.image_filename %></h2>
+</div>
+<section class="stats">
+	<%= link_to(image_tag(@photo.image_url(:small_thumb)), [@photo.event, @photo], :id => 'photo') %>
+	<ul id="info">
+		<li><span>Event</span><%= @photo.event.name %></li>
+		<li><span>Uploader</span><%= @photo.user.username %></li>
+		<li><span>Source</span><%= @photo.source.capitalize %></li>
+		
+		<li><span>Uploaded at</span><%= @photo.created_at.strftime("%d-%m-%Y") %></li>
+	</ul>
+	
+	<ul id="numbers">
+		<li><span class="counter"><%= @photo.likes %></span>Likes</li>
+		<li><span class="counter"><%= @photo.comments_count %></span>Comments</li>
+		<li><span class="counter"><%= @photo.view_count_for_version('medium') %></span>Medium</li>
+		<li><span class="counter"><%= @photo.view_count_for_version('large') %></span>Large</li>
+		<li><span class="counter"><%= @photo.view_count_for_version('huge') %></span>Huge</li>
+	</ul>
+	
+	<table>
+		<tr><th>Version</th><th>Hits last 30 days</th>
+		<% %w{ medium large hurge }.each do |version| %>
+			<tr>
+				<td><%= version.humanize %></td>
+				<td>
+					<span id="<%= version %>" class="sparkline"></span>
+					<script type="text/javascript">
+		      TopfunkySparkline('<%= version %>', 
+									[<%= @photo.view_count_for_version_by_day(version, 30).map { |d| d[:count] || 0}.join(', ') %>],
+		                   {
+		                     width:750, 
+		                     height:50, 
+		                     colorGood: '#BDBDBD',
+												 colorBad: '#BDBDBD',
+												 barWidth: 25
+												});				
+					</script>
+				</td>
+				</tr>
+			<% end %>
+	</table>
+		<table>
+			<tr><th>30 Latest referers</th><th>Count</th>
+				<% @photo.latest_referers(30).each do |referer| %>
+					<tr>
+						<td>
+							<% if referer['referer'] %>
+								<%= link_to truncate(referer['referer'], 100), referer['referer'] %>
+								
+							<% else %>
+								None
+							<% end %>
+						</td>
+						<td>
+							<%= referer['sum']%>
+						</td>
+					</tr>
+				<% end %>
+			</table>
+</section>

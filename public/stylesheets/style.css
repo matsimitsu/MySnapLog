@@ -91,8 +91,8 @@ div#wrapper {
     div#wrapper header#header h2 {
       margin: 0;
       padding: 0;
-      margin-top: 7px;
-      font-size: 45px;
+      margin-top: 5px;
+      font-size: 40px;
       color: #343434;
       float: left;
       text-shadow: 0 1px 1px #141414; }
@@ -157,7 +157,10 @@ body.photos div#wrapper div#main {
     box-shadow: 3px 3px 10px black;
     background-color: white; }
     body.photos div#wrapper div#main .photo a.download_link {
-      float: left; }
+      float: left;
+      background: transparent url("/images/icons/download.png") no-repeat left center;
+      padding-left: 18px;
+      margin-left: 10px; }
     body.photos div#wrapper div#main .photo ul {
       list-style-type: none;
       margin: 0;
@@ -167,23 +170,25 @@ body.photos div#wrapper div#main {
       padding-top: 2px;
       margin-left: 200px; }
       body.photos div#wrapper div#main .photo ul li {
-        height: 20px;
+        height: 15px;
         float: right; }
         body.photos div#wrapper div#main .photo ul li span, body.photos div#wrapper div#main .photo ul li a {
-          padding-left: 22px;
+          padding-left: 18px;
           padding-right: 10px; }
+        body.photos div#wrapper div#main .photo ul li span a {
+          padding: 0; }
         body.photos div#wrapper div#main .photo ul li.views span {
-          background: transparent url("/images/icons/monitor.png") no-repeat; }
+          background: transparent url("/images/icons/monitor.png") no-repeat left center; }
         body.photos div#wrapper div#main .photo ul li.comments span {
-          background: transparent url("/images/icons/dialog.png") no-repeat; }
+          background: transparent url("/images/icons/dialog.png") no-repeat left center; }
         body.photos div#wrapper div#main .photo ul li.likes a {
-          background: transparent url("/images/icons/love.png") no-repeat;
+          background: transparent url("/images/icons/love.png") no-repeat left center;
           text-decoration: none;
           color: inherit; }
         body.photos div#wrapper div#main .photo ul li.likes span {
-          background: transparent url("/images/icons/love_active.png") no-repeat; }
+          background: transparent url("/images/icons/love_active.png") no-repeat left center; }
         body.photos div#wrapper div#main .photo ul li.tags span {
-          background: transparent url("/images/icons/tags.png") no-repeat; }
+          background: transparent url("/images/icons/tags.png") no-repeat left center; }
   body.photos div#wrapper div#main .photo_large_thumb {
     width: 180px;
     float: left;
@@ -266,7 +271,7 @@ div#wrapper div#main div.manage_header {
   background-color: white;
   height: 50px; }
   div#wrapper div#main div.manage_header h2 {
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 0;
     padding: 5px 5px 5px 5px;
     width: 500px;
@@ -275,6 +280,52 @@ div#wrapper div#main div.manage_header {
     float: right;
     margin-top: 20px;
     color: white; }
+
+section.stats {
+  text-align: left;
+  color: #898989; }
+  section.stats a#photo {
+    float: left;
+    margin-right: 10px;
+    background-color: white; }
+    section.stats a#photo img {
+      margin: 5px;
+      border: 1px solid #bdbdbd; }
+  section.stats h3 {
+    clear: both;
+    margin-right: 10px; }
+  section.stats ul#info {
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px; }
+    section.stats ul#info li {
+      font-weight: bold; }
+      section.stats ul#info li span {
+        display: inline-block;
+        width: 100px;
+        font-weight: normal; }
+  section.stats ul#numbers {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    text-transform: uppercase; }
+    section.stats ul#numbers li {
+      float: left;
+      margin: 0;
+      padding: 0;
+      display: block;
+      width: 100px;
+      text-align: center; }
+      section.stats ul#numbers li span.counter {
+        font-size: 3em;
+        padding-bottom: 2px;
+        display: block; }
+  section.stats .sparkline svg {
+    border-bottom: 1px solid #bdbdbd; }
 
 section#event_header {
   text-align: left; }
